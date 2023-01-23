@@ -1,0 +1,122 @@
+.container {
+    width: 50%;
+    height: 100%;
+}
+
+/* Image container */
+.container:nth-child(1) {
+    background-color: #21304D;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+}
+
+.container:nth-child(1) div {
+    margin-left: 40px;
+}
+
+.container:nth-child(1) div:nth-child(1) {
+    font-weight: 100;
+    font-size: 18px;
+    color: #fff;
+}
+
+.container:nth-child(1) div:nth-child(2) {
+    margin-top: 5px;
+    margin-bottom: 40px;
+    font-size: 23px;
+    color: #AA8550;
+}
+
+/* The form container */
+.container:nth-child(2) {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading section */
+#heading {
+    width: 90%;
+}
+
+#heading h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+
+form {
+    width: 90%;
+
+}
+
+/* Main section styling */
+#mainSection {
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.formSection {
+    margin: 20px 10px;
+}
+
+.inputLabel {
+    font-size: 13px;
+    color: #696969;
+}
+
+.formSection input[type="text"], input[type="password"], textarea {
+    width: 270px;
+    height: 45px;
+    margin-top: 5px;
+    padding: 10px;
+    outline: none;
+    background-color: #F2F0F0;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Radio button section */
+.formSection:nth-child(4) {
+    width: 270px;
+}
+
+.formSection:nth-child(4) div {
+    background-color: #F2F0F0;
+    /* margin: 5px; */
+    width: 150px;
+    height: 45px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+/* This adds some space between the label and the radio button's circle */
+.formSection:nth-child(4) div input {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.formSection button{
+    width: 560px;
+    height: 45px;
+    border: 1px solid #21304D;
+    border-radius: 5px;
+    background-color: #21304D;
+    color: #fff;
+}
+
+/* Error message styling */
+.errorMessage {
+    font-size: 13px;
+    color: rgb(253, 55, 55);
+}

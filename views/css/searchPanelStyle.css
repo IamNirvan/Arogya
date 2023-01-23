@@ -1,0 +1,88 @@
+#searchPanelForm {
+    background-color: #fff;
+    min-height: 15%;
+    /* min-width: 100%; */
+    /* width: 100%; */
+    border-radius: 5px;
+    box-shadow: 0 4px 15px #555;
+    padding: 10px;
+    margin: 30px 30px 5px 30px;
+}
+
+.searchPanelInputLabel {
+    color: #696969;
+}
+
+#searchInputPanel {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+}
+
+#searchInputPanel input {
+    height: 40px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+    outline: none;
+    padding-left: 10px;
+    margin-right: 10px;
+    background-color: #f2f2f2;
+    
+}
+
+#searchInputPanel button {
+    height: 40px;
+    width: 10%;
+    border-radius: 5px;
+    border: 1px solid #AA8550;
+    color: #AA8550;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#searchInputPanel button:hover {
+    transition: 0.4s;
+    color: #fff;
+    background-color: #AA8550;
+}
+
+#searchInputPanel button:not(:hover) {
+    transition: 0.4s;
+    color: #AA8550;
+}
+
+
+
+#searchOptionPanel {
+    /* width: 10%; */
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: start;
+    overflow-y: scroll;
+}
+
+#searchOptionPanel::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}
+#searchOptionPanel::-webkit-scrollbar-thumb {
+	background-color: transparent;
+}
+
+.optionPanelSection {
+    margin: 10px 20px 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.optionPanelSection label{
+    margin-right: 5px;
+}
+
+
