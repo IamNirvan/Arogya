@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Add new appointment";
+$pageTitle = "Add appointment";
 require('partials/header.php');
 require('partials/navigation.php');
 

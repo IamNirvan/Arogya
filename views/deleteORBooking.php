@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Delete doctor";
+$pageTitle = "Delete OR booking";
 require('partials/header.php');
 require('partials/navigation.php');
 require('../utility/table.php');

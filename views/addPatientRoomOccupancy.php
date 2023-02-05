@@ -1,4 +1,3 @@
-<!-- FIX QUERIES -->
 <?php
 $pageTitle = "Add room booking";
 require('partials/header.php');

@@ -46,11 +46,6 @@ if(!validateContactNumber($contactNumber, "SELECT contactNumber from employee WH
     die();
 }
 
-//if(!checkAlphabetChars($specialization)) {
-//    header("Location: ../views/updateReceptionist.php?ID=$receptionistD&specializationError=Invalid input");
-//    die();
-//}
-
 try {
     $updateEmployeeQuery = "UPDATE employee SET 
                                 firstName = '$firstName',

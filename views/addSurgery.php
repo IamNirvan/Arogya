@@ -7,10 +7,10 @@ if(isset($_SESSION["username"])) {
     $patientID = $_SESSION["ID"];
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Add Surgery</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Add Surgery</h3>
-            </div>
             <form action="../controllers/addSurgeryHandler.php" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">

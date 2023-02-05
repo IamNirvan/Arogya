@@ -14,10 +14,10 @@ if(isset($_SESSION["username"])) {
     }
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Update Appointment</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Update Appointment</h3>
-            </div>
             <form action="../controllers/updateAppointmentHandler.php?ID=<?php echo $recId;?>" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">

@@ -6,10 +6,11 @@ require('partials/navigation.php');
 if(isset($_SESSION["username"])) {
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Add Allergy</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Add Allergy</h3>
-            </div>
+
             <form action="../controllers/addAllergyHandler.php" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">

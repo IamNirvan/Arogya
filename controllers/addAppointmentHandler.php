@@ -10,13 +10,6 @@ if(isset($_SESSION["username"])) {
     $endTime = strtotime(stripData($_POST["endTime"]));
     $reason = stripData($_POST["reason"]);
     $patientID = $_SESSION["ID"];
-//
-//    if($_SESSION["accountType"] = "receptionist") {
-//        $patientID = $_POST["patientIDs"];
-//    }
-//    else {
-//        $patientID = $_SESSION["ID"];
-//    }
 
     $doctorID = $_POST["doctorIDs"];
     $currentDate = date("Y-m-d");

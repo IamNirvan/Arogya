@@ -1,4 +1,3 @@
-<!-- FIX QUERIES -->
 <?php
 $pageTitle = "Add OR booking";
 require('partials/header.php');

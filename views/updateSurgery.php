@@ -12,10 +12,10 @@ if(isset($_SESSION["username"])) {
     }
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Update Surgery</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Update Surgery</h3>
-            </div>
             <form action="../controllers/updateSurgeryHandler.php?ID=<?php echo $surgeryID;?>" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">

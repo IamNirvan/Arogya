@@ -12,10 +12,10 @@ if(isset($_SESSION["username"])) {
     }
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Update Examination</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Update Examination</h3>
-            </div>
             <form action="../controllers/updateExaminationHandler.php?ID=<?php echo $examID;?>&examName=<?php echo $globalFetch['name']?>" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">
