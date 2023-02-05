@@ -3,7 +3,7 @@
     min-height: 15%;
     /* min-width: 100%; */
     /* width: 100%; */
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0 4px 15px #555;
     padding: 10px;
     margin: 30px 30px 5px 30px;
@@ -23,35 +23,34 @@
 #searchInputPanel input {
     height: 40px;
     width: 90%;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid #E5E5E5;
     outline: none;
     padding-left: 10px;
     margin-right: 10px;
     background-color: #f2f2f2;
-    
 }
 
 #searchInputPanel button {
     height: 40px;
     width: 10%;
-    border-radius: 5px;
-    border: 1px solid #AA8550;
-    color: #AA8550;
-    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #21304D;
+    background-color: #21304D;
+    color: #fff;
     cursor: pointer;
 }
 
-#searchInputPanel button:hover {
-    transition: 0.4s;
-    color: #fff;
-    background-color: #AA8550;
-}
+/*#searchInputPanel button:hover {*/
+/*    transition: 0.4s;*/
+/*    color: #fff;*/
+/*    background-color: #AA8550;*/
+/*}*/
 
-#searchInputPanel button:not(:hover) {
-    transition: 0.4s;
-    color: #AA8550;
-}
+/*#searchInputPanel button:not(:hover) {*/
+/*    transition: 0.4s;*/
+/*    color: #AA8550;*/
+/*}*/
 
 
 

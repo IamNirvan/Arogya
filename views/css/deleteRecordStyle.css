@@ -1,0 +1,83 @@
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    font-size: 30px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteOptions {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 4px 15px #555;
+}
+
+.deleteOptions button {
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#yesButton {
+    border: 1px solid #0cac9c;
+    background-color: transparent;
+    color: #0cac9c;
+}
+
+#yesButton:hover {
+    background-color: #0cac9c;
+    color: #fff;
+    transition: 0.4s;
+}
+
+#yesButton:not(:hover) {
+    border: 1px solid #0cac9c;
+    background-color: transparent;
+    color: #0cac9c;
+    transition: 0.4s;
+}
+
+#noButton {
+    border: 1px solid #d85353;
+    background-color: transparent;
+    color: #d85353;
+}
+
+#noButton:hover {
+    background-color: #d85353;
+    color: #fff;
+    transition: 0.4s;
+}
+
+#noButton:not(:hover) {
+    border: 1px solid #d85353;
+    background-color: transparent;
+    color: #d85353;
+    transition: 0.4s;
+}
+
+
+
+
+/* Error message styling */
+.errorMessage {
+    font-size: 13px;
+    color: rgb(253, 55, 55);
+}

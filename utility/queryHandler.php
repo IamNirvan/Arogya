@@ -11,7 +11,6 @@ function handleSelectQuery($query) {
         $result = mysqli_query($connection, $query);
         mysqli_close($connection);
 
-        // Return a valid result set, otherwise false
         if(mysqli_num_rows($result) > 0) {
             // return mysqli_fetch_assoc($result);
             return $result;

@@ -16,7 +16,7 @@ if($accountType == "patient") {
     $accountSelectQuery = "SELECT * FROM patientaccount WHERE username = '$username'";
     $rawData = handleSelectQuery($accountSelectQuery);
     
-    if($rawData != false) {
+    if($rawData) {
         $accountFetched = mysqli_fetch_assoc($rawData);
     
         // Check if the passwords match
@@ -27,7 +27,7 @@ if($accountType == "patient") {
             $nameQuery = "SELECT firstName, lastName FROM patient WHERE patientID = '$patientID'";
             $nameRawData = handleSelectQuery($nameQuery);
     
-            if($nameRawData != false) {
+            if($nameRawData) {
                 $nameFetched = mysqli_fetch_assoc($nameRawData);
                 $_SESSION["firstName"] = $nameFetched["firstName"];
                 $_SESSION["lastName"] = $nameFetched["lastName"];
@@ -50,7 +50,7 @@ else {
     $accountSelectQuery = "SELECT * FROM employeeaccount WHERE username = '$username' AND accountType='$accountType'";
     $rawData = handleSelectQuery($accountSelectQuery);
    
-    if($rawData != false) {
+    if($rawData) {
         $accountFetched = mysqli_fetch_assoc($rawData);
    
         // Check if the passwords match
@@ -61,11 +61,12 @@ else {
             $firstNameQuery = "SELECT firstName, lastName FROM employee WHERE employeeID = '$employeeID'";
             $firstNameRawData = handleSelectQuery($firstNameQuery);
    
-            if($firstNameRawData != false) {
+            if($firstNameRawData) {
                 $firstNameFetched = mysqli_fetch_assoc($firstNameRawData);
                 $_SESSION["firstName"] = $firstNameFetched["firstName"];
                 $_SESSION["lastName"] = $firstNameFetched["lastName"];
                 $_SESSION["accountType"] = $accountType;
+                $_SESSION["ID"] = $employeeID;
                 header("Location: ../views/dashboard.php");
             }
         }

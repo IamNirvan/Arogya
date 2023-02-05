@@ -78,7 +78,7 @@ form {
     outline: none;
     background-color: #F2F0F0;
     border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border-radius: 3px;
     color: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -97,7 +97,7 @@ form {
     justify-content: center;
     align-items: center;
     border: 1px solid #E5E5E5;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 /* This adds some space between the label and the radio button's circle */
@@ -110,7 +110,7 @@ form {
     width: 560px;
     height: 45px;
     border: 1px solid #21304D;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: #21304D;
     color: #fff;
 }

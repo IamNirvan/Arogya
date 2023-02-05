@@ -1,10 +1,11 @@
-<!-- 
-Author: Shalin Kulawardane    
-This page contains the header and the navigation  
+<!--
+Author: Shalin Kulawardane
+This page contains the header and the navigation
 -->
-<?php 
+<?php
+$pageTitle = "HMS";
 session_start();
-require('../utility/stylesheetMapper.php'); 
+require('../utility/stylesheetMapper.php');
 require("../utility/queryHandler.php");
 ?>
 
@@ -19,6 +20,7 @@ require("../utility/queryHandler.php");
     <link type="text/css" rel="stylesheet" href="css/tableStyle.css">
     <link type="text/css" rel="stylesheet" href="css/cardStyle.css">
     <link type="text/css" rel="stylesheet" href="css/searchPanelStyle.css">
+    <link type="text/css" rel="stylesheet" href="css/informationPanelStyle.css">
 
     <!-- Use this to apply a suitable style sheet for different pages in the website -->
     <?php 

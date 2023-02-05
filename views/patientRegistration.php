@@ -66,7 +66,7 @@ require('partials/header.php');
                 ?></label>
                 </div>
                 <div class="formSection">
-                    <label class="inputLabel" for="nationalityextBox">Nationaility</label>
+                    <label class="inputLabel" for="nationalityextBox">Nationality</label>
                     <br>
                     <input type="text" id="nationalityTextBox" name="nationality" required>
                     <br>

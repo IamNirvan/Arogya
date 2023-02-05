@@ -1,0 +1,85 @@
+#informationPanelForm {
+    background-color: #fff;
+    /*min-height: 15%;*/
+    /* min-width: 100%;*/
+    /*width: 100%;*/
+    border-radius: 3px;
+    box-shadow: 0 4px 15px #555;
+    padding: 10px;
+    margin: 30px 30px 5px 30px;
+}
+
+.label {
+    color: #696969;
+}
+
+#informationPanel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    /*display: flex;*/
+    /*align-items: start;*/
+    /*justify-content: center;*/
+    /*margin: 0px 10px;*/
+}
+
+.section:nth-child(1) {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+    overflow: scroll;
+}
+
+.section::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+.section::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.box {
+    /*width: 50px;*/
+    margin: 5px 20px;
+}
+
+.label {
+    font-size: 16px;
+}
+
+.value {
+    font-size: 13px;
+    color: #21304D;
+}
+
+.section:nth-child(2) {
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    min-width: 20%;
+}
+
+.section:nth-child(2) button {
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#infoUpdateButton {
+    color: #fff;
+    background-color: #AA8550;
+    border: 1px solid #AA8550;
+}
+
+#infoDeleteButton {
+    color: #fff;
+    background-color: #d85353;
+    border: 1px solid #d85353;
+}

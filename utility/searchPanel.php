@@ -5,7 +5,7 @@
 function addSearchBar($assoc) {
     echo'
         <div id="searchInputPanel">
-            <input type="text" id="searchBar" name="searchBar" placeholder="Enter to search" required>
+            <input type="text" id="searchBar" name="searchBar" placeholder="Search for record" required>
             <button type="submit" name="searchButton">Search</button>
         </div>
         <div id="searchOptionPanel">';

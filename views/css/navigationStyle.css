@@ -29,7 +29,7 @@
     padding: 8px 15px;
     /* background-color: rgb(255, 52, 52); */
     background-color: #AA8550;
-    border-radius: 5px;
+    border-radius: 3px;
     text-decoration: none;
     color: #fff;
 }
@@ -51,7 +51,7 @@
 .navigation-ul-li-a-inactive {
     text-decoration: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -79,7 +79,7 @@
 .navigation-ul-li-a-active {
     text-decoration: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
     /* background-color: #AA8550; */
     background-color: #162035;
     display: flex;

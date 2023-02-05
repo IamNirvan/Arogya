@@ -10,7 +10,8 @@ html, body {
 }
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+    font-family: Calibri;
     font-size: 13px;
     color: #000;
     display: flex;
@@ -32,8 +33,10 @@ header {
     min-width: 80%;
     height: 100%;
     width: 80%;
-    background-color: #f2f2f2;
+    background-color: #fff;
+    /*background-color: #f2f2f2;*/
     /* background-color: #e5e5e5; */
     overflow: hidden;
+    /*padding-bottom: 20px;*/
     /* padding-bottom: 10px; */
 }

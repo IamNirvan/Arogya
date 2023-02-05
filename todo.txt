@@ -1,9 +1,0 @@
-General:
-
-Patient:
-
-Doctor:
-
-Receptionist:
-
-Admin:

@@ -7,6 +7,14 @@ function stripData($data) {
     return $data;
 }
 
+function checkAnyChars($input) : bool{
+    return (preg_match("/[\w]{2,100}/", $input));
+}
+
+function checkAlphabetChars($input) : bool{
+    return (preg_match("/^[A-Za-z]{2,100}/", $input));
+}
+
 function validateNIC($NIC) {
     return strlen($NIC) == 12;
 }

@@ -1,6 +1,8 @@
-<?php 
+<?php
 $pageTitle = "Login";
-require('partials/header.php'); 
+
+require('partials/header.php');
+
 ?>
     <!-- This container is for the image-->
     <div class="container">
@@ -9,7 +11,7 @@ require('partials/header.php');
     <div class="container">
         <div id="heading">
             <h2>Login</h2>
-            <p>Select one of the following account options</p>
+            <p>Select one of the account options</p>
         </div>
         <form action="../controllers/loginHandler.php" method="POST" autocomplete="off">
             <!-- This is for the account type radio buttons -->

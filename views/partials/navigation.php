@@ -164,23 +164,13 @@
                                     Home
                                 </a>
                             </li>
-                            <li class="navigation-ul-li">
-                                <a ';
-                                if($path == "medicalHistory.php") {echo "class=navigation-ul-li-a-active" ; }
-                                else {echo "class=navigation-ul-li-a-inactive";};
-                                echo '
-                                href="">
-                                    <img src="images/icons/history.png">
-                                    Login history
-                                </a>
-                            </li>
                             
                             <li class="navigation-ul-li">
                                 <a ';
-                                if($path == "medicalHistory.php") {echo "class=navigation-ul-li-a-active" ; }
+                                if($path == "manageDoctor.php") {echo "class=navigation-ul-li-a-active" ; }
                                 else {echo "class=navigation-ul-li-a-inactive";};
                                 echo '
-                                href="">
+                                href="manageDoctor.php">
                                     <img src="images/icons/employees.png">
                                     Manage doctors
                                 </a>
@@ -188,10 +178,10 @@
                             
                             <li class="navigation-ul-li">
                                 <a ';
-                                if($path == "medicalHistory.php") {echo "class=navigation-ul-li-a-active" ; }
+                                if($path == "manageReceptionist.php") {echo "class=navigation-ul-li-a-active" ; }
                                 else {echo "class=navigation-ul-li-a-inactive";};
                                 echo '
-                                href="">
+                                href="manageReceptionist.php">
                                     <img src="images/icons/employees.png">
                                     Manage receptionists
                                 </a>
