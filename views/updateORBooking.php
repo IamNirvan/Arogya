@@ -1,4 +1,3 @@
-<!-- FIX QUERIES -->
 <?php
 $pageTitle = "Add OR booking";
 require('partials/header.php');
@@ -97,10 +96,10 @@ if(isset($_SESSION["username"])) {
 
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/updateORBookingHandler.php?date='.$_POST["date"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.'date='.$_POST["date"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/updateORBookingHandler.php" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.'" method="POST" autocomplete="off">';
             }
             ?>
 
@@ -126,7 +125,7 @@ if(isset($_SESSION["username"])) {
                             $lastName = $fetched["lastName"];
 
                             if($globalFetch["patientID"] == $patientID) {
-                                echo "<option value=$patientID checked>[$patientID] $firstName  $lastName</option>";
+                                echo "<option value=$patientID selected>[$patientID] $firstName  $lastName</option>";
                             }
                             else {
                                 echo "<option value=$patientID>[$patientID] $firstName  $lastName</option>";

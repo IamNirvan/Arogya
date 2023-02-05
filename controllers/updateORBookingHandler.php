@@ -17,10 +17,6 @@ if(isset($_SESSION["username"])) {
     //
     // Validate input
     //
-//    if($date < $currentDate) {
-//        header("Location: ../views/updateORBooking.php?invalidDateError=Invalid date");
-//        die();
-//    }
     if($date == $currentDate){
       if($startTime < $currentTime) {
           header("Location: ../views/updateORBooking.php?invalidStartTimeError=Invalid start time");
@@ -39,7 +35,8 @@ if(isset($_SESSION["username"])) {
                                  startTime = '$startTime', endTime = '$endTime', 
                                  patientID = '$patientID',
                                  employeeID = '$doctorID',
-                                 operatingRoomID = '$operatingRoomID';";
+                                 operatingRoomID = '$operatingRoomID'
+                                 WHERE operatingroomscheduleID = '$ORBookingID';";
 
 
         if(handleUpdateQuery($updateORBookingQuery)) {
