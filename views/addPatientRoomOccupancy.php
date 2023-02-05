@@ -1,30 +1,12 @@
 <!-- FIX QUERIES -->
 <?php
-$pageTitle = "Add OR booking";
+$pageTitle = "Add room booking";
 require('partials/header.php');
 require('partials/navigation.php');
 require('../utility/table.php');
 require('../utility/searchPanel.php');
 require('../utility/informationPanel.php');
 date_default_timezone_set("Asia/Colombo");
-
-// The time period of the booking
-// Type of room
-// Specific room that is available during that period
-// The patient
-
-
-// Section 1:
-// Get the desired type of room
-// Table showing all the available rooms of that type
-
-//Section 2
-// Start date
-// End date
-// Patient ID (And option to enter new patient details)
-
-
-
 
 if(isset($_SESSION["username"])) {
     $doctorID = $_SESSION["ID"];
@@ -38,12 +20,6 @@ if(isset($_SESSION["username"])) {
         $endTime = $_POST["endTime"];
         $roomType = $_POST["roomType"];
 
-//        echo "$startDate<br>";
-//        echo "$endDate<br>";
-//        echo "$startTime<br>";
-//        echo "$endTime<br>";
-//        echo "$roomType<br>";
-//        die();
         $availableRoomsQuery = "SELECT 
                                     roomID,
                                     roomNumber
@@ -136,7 +112,7 @@ if(isset($_SESSION["username"])) {
                             ?></label>
                     </div>
                     <div class="formSection">
-                        <label class="inputLabel" for="patientTextBox">Room type</label>
+                        <label class="inputLabel" for="roomTypeSelect">Room type</label>
                         <br>
                         <select name="roomType" required>
                             <?php
@@ -170,10 +146,10 @@ if(isset($_SESSION["username"])) {
 
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/addORBookingHandler.php?startDate='.$_POST["startDate"].'&endDate='.$_POST["endDate"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php?startDate='.$_POST["startDate"].'&endDate='.$_POST["endDate"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/addORBookingHandler.php" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php" method="POST" autocomplete="off">';
             }
             ?>
 
