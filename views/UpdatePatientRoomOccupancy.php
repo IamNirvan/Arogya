@@ -11,6 +11,10 @@ if(isset($_SESSION["username"])) {
     $currentDate = date("Y-m-d");
     $currentTime = time();
 
+    if($records) {
+        $globalFetch = mysqli_fetch_assoc($records);
+    }
+
     if(isset($_POST["availableRoomsButton"])) {
         $startDate = $_POST["startDate"];
         $endDate = $_POST["endDate"];
@@ -39,15 +43,15 @@ if(isset($_SESSION["username"])) {
             <h3>Update a Room Booking</h3>
         </div>
         <div class="container">
-            <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+            <form action="<?php echo $_SERVER['PHP_SELF']?>?ID=<?php echo $recId?>" method="POST">
                 <div id="mainSection">
                     <div class="formSection">
                         <label class="inputLabel" for="startDatePicker">Start date</label>
                         <br>
                         <input type="date" id="startDatePicker" name="startDate"
                             <?php
-                            if(isset( $_POST["startDate"])) {
-                                echo 'value="'. $_POST["startDate"].'"';
+                            if(isset( $globalFetch["startDate"])) {
+                                echo 'value="'. $globalFetch["startDate"].'"';
                             }
                             ?>
                                required>
@@ -63,8 +67,8 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="date" id="endDatePicker" name="endDate"
                             <?php
-                            if(isset( $_POST["endDate"])) {
-                                echo 'value="'. $_POST["endDate"].'"';
+                            if(isset( $globalFetch["endDate"])) {
+                                echo 'value="'. $globalFetch["endDate"].'"';
                             }
                             ?>
                                required>
@@ -80,9 +84,7 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="startTimePicker" name="startTime"
                             <?php
-                            if(isset( $_POST["startTime"])) {
-                                echo 'value="'. $_POST["startTime"].'"';
-                            }
+                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["startTime"].'"' : 'value="'. $globalFetch["startTime"].'"' ;
                             ?>
                                required>
                         <br>
@@ -97,9 +99,7 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="endTimePicker" name="endTime"
                             <?php
-                            if(isset( $_POST["endTime"])) {
-                                echo 'value="'. $_POST["endTime"].'"';
-                            }
+                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["endTime"].'"' : 'value="'. $globalFetch["endTime"].'"' ;
                             ?>
                                required>
                         <br>
@@ -117,12 +117,15 @@ if(isset($_SESSION["username"])) {
                             $query = "SELECT * FROM roomtype";
                             $rawData = handleSelectQuery($query);
 
+                            $roomTypeQuery = "SELECT roomTypeID from room WHERE roomID = '".$globalFetch["roomID"]."'";
+                            $fetchedRoomType = mysqli_fetch_assoc(handleSelectQuery($roomTypeQuery));
+
                             while($fetched = mysqli_fetch_assoc($rawData)) {
                                 $typeID = $fetched["roomTypeID"];
                                 $typeName = $fetched["typeName"];
 
-                                if(isset($_POST["roomType"])) {
-                                    if($typeID == $_POST["roomType"]) {
+                                if(isset($_POST["availableRoomsButton"])) {
+                                    if($typeID == $fetchedRoomType["roomTypeID"]) {
                                         echo "<option value=$typeID selected>[$typeID] $typeName</option>";
                                     }
                                     else {
@@ -144,10 +147,10 @@ if(isset($_SESSION["username"])) {
 
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/addORBookingHandler.php?startDate='.$_POST["startDate"].'&endDate='.$_POST["endDate"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.$recId.'&startDate='.$globalFetch["startDate"].'&endDate='.$globalFetch["endDate"].'&startTime='.$globalFetch["startTime"].'&endTime='.$globalFetch["endTime"].'" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/addORBookingHandler.php" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.$recId.'&" method="POST" autocomplete="off">';
             }
             ?>
 
@@ -166,12 +169,12 @@ if(isset($_SESSION["username"])) {
                                     (SELECT 
                                     operatingroomschedule.patientID 
                                     FROM operatingroomschedule 
-                                    WHERE operatingroomschedule.bookedDate >= '2023-02-05') 
+                                    WHERE operatingroomschedule.bookedDate >= '2023-02-05' AND patientID != '".$globalFetch["patientID"]."') 
                                     AND patient.patientID NOT IN 
                                     (SELECT 
                                     roomoccupancy.patientID 
                                     FROM roomoccupancy 
-                                    WHERE roomoccupancy.endDate >= '2023-02-05');";
+                                    WHERE roomoccupancy.endDate >= '2023-02-05' AND patientID != '".$globalFetch["patientID"]."');";
                         $rawData = handleSelectQuery($query);
 
                         while($fetched = mysqli_fetch_assoc($rawData)) {
