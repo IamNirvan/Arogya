@@ -7,10 +7,10 @@ if(isset($_SESSION["username"])) {
     $currentDate = date('Y-m-d');
 ?>
     <main class="app-main">
+        <div class="heading">
+            <h3>Add new appointment</h3>
+        </div>
         <div class="container">
-            <div class="heading">
-                <h3>Add new appointment</h3>
-            </div>
             <form action="../controllers/addAppointmentHandler.php" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">
@@ -67,33 +67,33 @@ if(isset($_SESSION["username"])) {
                         </select>
                     </div>
 
-<!--                    --><?php //if($_SESSION["accountType"] == "receptionist") {
-//                        ?>
-<!--                        <div class="formSection">-->
-<!--                            <label class="inputLabel" for="usernameTextBox">Patient ID</label>-->
-<!--                            <br>-->
-<!--                            <select name="patientIDs">-->
-<!--                                --><?php
-//                                $query = "SELECT
-//                                            patientID,
-//                                            firstName,
-//                                            lastName
-//                                            from patient WHERE patientID NOT IN
-//                                            (SELECT patientID from roomoccupancy WHERE endDate >= '$currentDate');";
-//                                $rawData = handleSelectQuery($query);
-//
-//                                while($fetched = mysqli_fetch_assoc($rawData)) {
-//                                    $employeeID = $fetched["patientID"];
-//                                    $firstName = $fetched["firstName"];
-//                                    $lastName = $fetched["lastName"];
-//                                    echo "<option value=$employeeID>[$employeeID] $firstName $lastName</option>";
-//                                }
-//                                ?>
-<!--                            </select>-->
-<!--                        </div>-->
-<!---->
-<!--                    --><?php
-//                    }?>
+                    <?php if($_SESSION["accountType"] == "receptionist") {
+                        ?>
+                        <div class="formSection">
+                            <label class="inputLabel" for="usernameTextBox">Patient ID</label>
+                            <br>
+                            <select name="patientIDs">
+                                <?php
+                                $query = "SELECT
+                                            patientID,
+                                            firstName,
+                                            lastName
+                                            from patient WHERE patientID NOT IN
+                                            (SELECT patientID from roomoccupancy WHERE endDate >= '$currentDate');";
+                                $rawData = handleSelectQuery($query);
+
+                                while($fetched = mysqli_fetch_assoc($rawData)) {
+                                    $employeeID = $fetched["patientID"];
+                                    $firstName = $fetched["firstName"];
+                                    $lastName = $fetched["lastName"];
+                                    echo "<option value=$employeeID>[$employeeID] $firstName $lastName</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                    <?php
+                    }?>
 
                     <div class="formSection">
                         <label class="inputLabel" for="addressTextBox">Reason</label>

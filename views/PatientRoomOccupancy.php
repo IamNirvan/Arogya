@@ -76,7 +76,8 @@ if(isset($_SESSION["username"])) {
         $columnNames1 = ["ID", "Start date", "End date", "Start time", "End time", "Room ID", "Patient ID", "Status"];
         $attributes1 = ["occupancyID", "startDate", "endDate", "startTime", "endTime", "roomID", "patientID", "occupancyStatus"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery, title:"Patient Room Bookings",
-            size:"extraLargeBox", viewLink: $_SERVER['PHP_SELF']);
+            size:"extraLargeBox", viewLink: $_SERVER['PHP_SELF'], addItemPage: "addPatientRoomOccupancy.php",
+            updateLink: "updatePatientRoomOccupancy.php", deleteLink: "deletePatientRoomOccupancy.php");
         echo '</div>';
     }
     else if($_SESSION["accountType"] == "doctor") {

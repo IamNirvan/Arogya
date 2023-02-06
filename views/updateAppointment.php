@@ -6,6 +6,7 @@ require('../utility/table.php');
 require('../utility/searchPanel.php');
 
 if(isset($_SESSION["username"])) {
+    $currentDate = date('Y-m-d');
     $recId = $_GET["ID"];
     $records = handleSelectQuery("SELECT * FROM appointment WHERE appointmentID = '$recId'");
 
@@ -54,10 +55,45 @@ if(isset($_SESSION["username"])) {
                             ?></label>
                     </div>
 
+                    <?php if($_SESSION["accountType"] == "receptionist") {
+                        ?>
+                        <div class="formSection">
+                            <label class="inputLabel" for="usernameTextBox">Patient ID</label>
+                            <br>
+                            <select name="patientIDs">
+                                <?php
+                                $query = "SELECT
+                                            patientID,
+                                            firstName,
+                                            lastName
+                                            from patient WHERE patientID NOT IN
+                                            (SELECT patientID from roomoccupancy WHERE endDate >= '$currentDate');";
+                                $rawData = handleSelectQuery($query);
+
+                                while($fetched = mysqli_fetch_assoc($rawData)) {
+                                    $patientID = $fetched["patientID"];
+                                    $firstName = $fetched["firstName"];
+                                    $lastName = $fetched["lastName"];
+
+                                    if($patientID == $globalFetch["patientID"]) {
+                                        echo "<option value=$patientID selected>[$patientID] $firstName $lastName</option>";
+                                    }
+                                    else {
+                                        echo "<option value=$patientID>[$patientID] $firstName $lastName</option>";
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <?php
+                    }?>
+
+
                     <div class="formSection">
                         <label class="inputLabel" for="usernameTextBox">Doctor ID</label>
                         <br>
-                        <select name="doctorIDs" value="<?php echo $globalFetch["employeeID"];?>">
+                        <select name="doctorIDs">
                             <?php
                             $query = "SELECT employeeID, firstName, lastName, specialization from employee WHERE NOT
                          specialization ='administrator' AND NOT specialization ='receptionist';";

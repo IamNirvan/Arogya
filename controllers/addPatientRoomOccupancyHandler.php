@@ -33,10 +33,10 @@ if(isset($_SESSION["username"])) {
         die();
     }
 
-    if($endTime <= $startTime) {
-        header("Location: ../views/addPatientRoomOccupancy.php?invalidDurationError=Invalid end time");
-        die();
-    }
+//    if($endTime <= $startTime) {
+//        header("Location: ../views/addPatientRoomOccupancy.php?invalidDurationError=Invalid end time");
+//        die();
+//    }
 
     try {
         $startTime = $_GET["startTime"];

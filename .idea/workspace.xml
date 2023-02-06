@@ -4,32 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162267e0-d47f-4a7e-9152-b0e446075573" name="Changes" comment="Modified OR booking resources">
-      <change afterPath="$PROJECT_DIR$/controllers/deletePatientRoomOccupancyHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/updatePatientRoomOccupancyHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/deletePatientRoomOccupancy.php" afterDir="false" />
+    <list default="true" id="162267e0-d47f-4a7e-9152-b0e446075573" name="Changes" comment="Layout changes to add, update and delete pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/addAppointmentHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/addAppointmentHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/updateReceptionistHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updateReceptionistHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/addPatientRoomOccupancyHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/addPatientRoomOccupancyHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/updateAppointmentHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updateAppointmentHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utility/stylesheetMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/utility/stylesheetMapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/PatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/PatientRoomOccupancy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/UpdatePatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/UpdatePatientRoomOccupancy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addAllergy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addAllergy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/addAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addAppointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addDoctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addExamination.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addExamination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addImmunizations.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addImmunizations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addORBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addORBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addPatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addPatientRoomOccupancy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addReceptionist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/addSurgery.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addSurgery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/deleteORBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/deleteORBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateAllergy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateAllergy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/appointment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/updateAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateAppointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateDoctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateExamination.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateExamination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateImmunization.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateImmunization.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateReceptionist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/updateSurgery.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateSurgery.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,20 +42,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp/htdocs/1_HND/HMS version 3/views",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/1_HND/HMS version 3/views&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\1_HND\HMS version 3\views" />
@@ -98,7 +83,8 @@
       <workItem from="1675451690575" duration="28775000" />
       <workItem from="1675544143968" duration="5000" />
       <workItem from="1675598670703" duration="835000" />
-      <workItem from="1675600271940" duration="11366000" />
+      <workItem from="1675600271940" duration="13677000" />
+      <workItem from="1675675185558" duration="4810000" />
     </task>
     <task id="LOCAL-00001" summary="Added patient room occupancy resources">
       <created>1675605894727</created>
@@ -121,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675624226672</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added patient room occupancy handler resources">
+      <created>1675627054797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675627054797</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Layout changes to add, update and delete pages">
+      <created>1675627093010</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675627093010</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +131,8 @@
     <MESSAGE value="Added patient room occupancy resources" />
     <MESSAGE value="Added other changes" />
     <MESSAGE value="Modified OR booking resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified OR booking resources" />
+    <MESSAGE value="Added patient room occupancy handler resources" />
+    <MESSAGE value="Layout changes to add, update and delete pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Layout changes to add, update and delete pages" />
   </component>
 </project>

@@ -15,6 +15,13 @@ if(isset($_SESSION["username"])) {
     $currentDate = date("Y-m-d");
     $currentTime = time();
 
+    if($_SESSION["accountType"] == "receptionist") {
+        $patientID = $_POST["patientIDs"];
+    }
+    else {
+        $patientID = $_SESSION["ID"];
+    }
+
     $validDate = false;
     $validStartTime = false;
     $validDuration = false;
@@ -53,6 +60,7 @@ if(isset($_SESSION["username"])) {
                startTime = '$startTime',
                endTime = '$endTime', 
                description = '$reason', 
+               patientID = '$patientID',
                employeeID = '$doctorID', 
                appointmentStatus = '$appointmentStatus' 
                WHERE appointmentID = '$recId';";
