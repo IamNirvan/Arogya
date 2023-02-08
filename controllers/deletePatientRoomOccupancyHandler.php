@@ -11,11 +11,11 @@ if(isset($_SESSION["username"])) {
         if(isset($_POST["yesButton"])) {
             $deleteOccupancy = "DELETE FROM roomoccupancy WHERE occupancyID = '$recId';";
 
-            if(!handleDeleteQuery($deleteOccupancy)) {
-                header("Location: ../views/patientRoomOccupancy.php?error=Error when deleting details");
+            if(handleDeleteQuery($deleteOccupancy)) {
+                header("Location: ../views/patientRoomOccupancy.php");
                 die();
             }
-            header("Location: ../views/patientRoomOccupancy.php");
+            header("Location: ../views/patientRoomOccupancy.php?error=Unable to delete record");
         }
         else if(isset($_POST["noButton"])) {
             header("Location: ../views/patientRoomOccupancy.php");
@@ -23,9 +23,8 @@ if(isset($_SESSION["username"])) {
         }
     }
     catch(Exception) {
-        header("Location: ../views/patientRoomOccupancy.php?deleteError=Unable to delete record");
+        header("Location: ../views/patientRoomOccupancy.php?error=Unable to delete record");
         die();
     }
-
 }
 

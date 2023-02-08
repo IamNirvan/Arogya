@@ -24,7 +24,7 @@ if(isset($_SESSION["username"])) {
         }
     }
     catch(Exception) {
-        header("Location: ../views/medicalHistory.php?deleteError=Unable to delete record");
+        header("Location: ../views/medicalHistory.php?error=Unable to delete record");
         die();
     }
 

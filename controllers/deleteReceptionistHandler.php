@@ -23,7 +23,7 @@ if(isset($_SESSION["username"])) {
         }
     }
     catch(Exception) {
-        header("Location: ../views/manageReceptionist.php?deleteError=Unable to delete record");
+        header("Location: ../views/manageReceptionist.php?error=Unable to delete record");
         die();
     }
 

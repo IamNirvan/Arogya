@@ -10,13 +10,12 @@ if(isset($_SESSION["username"])) {
     try {
         if(isset($_POST["yesButton"])) {
             $query = "DELETE FROM allergies WHERE allergyID = '$recId';";
+
             if(handleDeleteQuery($query)) {
                 header("Location: ../views/medicalHistory.php");
                 die();
             }
-            else {
-                echo "Failure!";
-            }
+            header("Location: ../views/medicalHistory.php?error=Unable to delete record");
         }
         else if(isset($_POST["noButton"])) {
             header("Location: ../views/medicalHistory.php");
@@ -24,7 +23,7 @@ if(isset($_SESSION["username"])) {
         }
     }
     catch(Exception) {
-        header("Location: ../views/medicalHistory.php?deleteError=Unable to delete record");
+        header("Location: ../views/medicalHistory.php?error=Unable to delete record");
         die();
     }
 
