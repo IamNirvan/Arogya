@@ -9,7 +9,7 @@ if(isset($_SESSION["username"])) {
 
     try {
         if(isset($_POST["yesButton"])) {
-            $deleteOccupancy = "DELETE FROM roomoccupancy WHERE roomoccupancyID = '$recId';";
+            $deleteOccupancy = "DELETE FROM roomoccupancy WHERE occupancyID = '$recId';";
 
             if(!handleDeleteQuery($deleteOccupancy)) {
                 header("Location: ../views/patientRoomOccupancy.php?error=Error when deleting details");

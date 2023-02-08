@@ -72,6 +72,16 @@
                             </li>
                             <li class="navigation-ul-li">
                                 <a ';
+                                if($path == "patients.php") {echo "class=navigation-ul-li-a-active" ; }
+                                else {echo "class=navigation-ul-li-a-inactive";};
+                                echo '
+                                href="patients.php">
+                                    <img src="images/icons/patient.png">
+                                    Patients
+                                </a>
+                            </li>
+                            <li class="navigation-ul-li">
+                                <a ';
                                 if($path == "PatientRoomOccupancy.php") {echo "class=navigation-ul-li-a-active" ; }
                                 else {echo "class=navigation-ul-li-a-inactive";};
                                 echo '
@@ -189,42 +199,8 @@
                             
                         </ul>
                     </nav> ';
-
-
                 }
-
-
-
             ?>
-
-            <!-- <nav class="navigation">
-                <ul class="navigation-ul">
-                    <li class="navigation-ul-li">
-                        <a <?php if($path == "dashboard.php") {echo "class=navigation-ul-li-a-active" ; } ?> href="dashboard.php">
-                            <img src="images/icons/home.png">
-                            Home
-                        </a>
-                    </li>
-                    <li class="navigation-ul-li">
-                        <a <?php if($path == "/1_HND/HMS%20version%203/views/patient.php") {echo "class=navigation-ul-li-a-active" ; } ?> href="patient.php">
-                            <img src="images/icons/patient.png">
-                            Patients
-                        </a>
-                    </li>
-                    <li class="navigation-ul-li">
-                        <a <?php if($path == "/1_HND/HMS%20version%203/views/ORBookings.php") {echo "class=navigation-ul-li-a-active" ; } ?> href="ORBookings.php">
-                            <img src="images/icons/booking.png">
-                            OR Bookings
-                        </a>
-                    </li>
-                    <li class="navigation-ul-li">
-                        <a <?php if($path == "appointment.php") {echo "class=navigation-ul-li-a-active" ; } ?> href="appointment.php">
-                        <img src="images/icons/appointment.png">
-                        Appointments
-                    </a>
-                    </li>
-                </ul>
-            </nav> -->
         </div>
         <div class="header-user">
             <div>

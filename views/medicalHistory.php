@@ -14,7 +14,7 @@ if(isset($_SESSION["username"])) {
         //
         // Table
         //
-        echo '<div id="tableContainer">';
+        echo '<div id="tableContainerLarge">';
         $query1 = "SELECT * FROM allergies WHERE patientID = '$patientID';";
         $columnNames1 = ["ID", "Allergy"];
         $attributes1 = ["allergyID", "name"];

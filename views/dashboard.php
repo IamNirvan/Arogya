@@ -62,7 +62,7 @@ if(isset($_SESSION["username"])) {
         //
         // Table
         //
-        echo '<div id="tableContainer">';
+        echo '<div id="tableContainerMedium">';
         //
         // To get all the open appointments for the day
         //
@@ -115,7 +115,7 @@ if(isset($_SESSION["username"])) {
         //
         // Tables
         //
-        echo '<div id="tableContainer">';
+        echo '<div id="tableContainerLarge">';
         //
         // Get the open appointments
         //
@@ -170,7 +170,7 @@ if(isset($_SESSION["username"])) {
         //
         // Table
         //
-        echo '<div id="tableContainer">';
+        echo '<div id="tableContainerMedium">';
         //
         // To get all the open appointments for the day
         //

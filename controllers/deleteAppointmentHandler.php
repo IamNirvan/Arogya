@@ -7,7 +7,7 @@ date_default_timezone_set("Asia/Colombo");
 if(isset($_SESSION["username"])) {
     $recId = $_GET["ID"];
 
-    try {
+//    try {
         if(isset($_POST["yesButton"])) {
             $query = "DELETE FROM appointment WHERE appointmentID = '$recId';";
             if(handleDeleteQuery($query)) {
@@ -22,11 +22,11 @@ if(isset($_SESSION["username"])) {
             header("Location: ../views/appointment.php");
             die();
         }
-    }
-    catch(Exception) {
-        header("Location: ../views/appointment.php?deleteError=Unable to delete record");
-        die();
-    }
+//    }
+//    catch(Exception) {
+//        header("Location: ../views/appointment.php?deleteError=Unable to delete record");
+//        die();
+//    }
 
 }
 

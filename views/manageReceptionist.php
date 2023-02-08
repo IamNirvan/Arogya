@@ -89,7 +89,7 @@ if(isset($_SESSION["username"])) {
             $columnNames1 = ["ID", "First name", "Last name"];
             $attributes1 = ["employeeID", "firstName", "lastName"];
             addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery,
-                title:"Receptionist", size:"extraLargeBox", addItemPage: "addReceptionist.php", deleteLink: "deleteReceptionist.php",
+                title:"Receptionist", size:"largeBox", addItemPage: "addReceptionist.php", deleteLink: "deleteReceptionist.php",
                 updateLink: "updateReceptionist.php", viewLink: $_SERVER['PHP_SELF']);
             echo '</div>';
         ?>

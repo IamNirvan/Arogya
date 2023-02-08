@@ -13,6 +13,8 @@ if(isset($_SESSION["username"])) {
 
     if($records) {
         $globalFetch = mysqli_fetch_assoc($records);
+//        var_dump($globalFetch);
+//        die();
     }
 
     if(isset($_POST["availableRoomsButton"])) {
@@ -23,13 +25,6 @@ if(isset($_SESSION["username"])) {
         $roomType = $_POST["roomType"];
         $roomID = $globalFetch["roomID"];
 
-//        $availableRoomsQuery = "SELECT * from room WHERE roomID = '$roomID' OR roomID NOT IN
-//                                    (SELECT
-//                                    roomID
-//                                    FROM roomoccupancy
-//                                    WHERE (startDate >= '$startDate' OR (endDate >= '$startDate' AND endDate<= '$endDate')))
-//                                    AND roomTypeID = '$roomType';";
-
         $availableRoomsQuery = "SELECT * from room WHERE roomID NOT IN
                                     (SELECT
                                     roomID
@@ -38,7 +33,7 @@ if(isset($_SESSION["username"])) {
                                     AND roomTypeID = '$roomType';";
     }
     else {
-        $availableRoomsQuery = null;
+        $availableRoomsQuery = "SELECT * from room WHERE roomID;";
     }
 
     ?>

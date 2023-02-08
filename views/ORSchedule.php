@@ -72,7 +72,7 @@ if(isset($_SESSION["username"])) {
         $columnNames1 = ["Schedule ID", "Date", "Start time", "End time", "Operating room ID"];
         $attributes1 = ["operatingRoomScheduleID", "bookedDate", "startTime", "endTime", "operatingRoomID"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery,
-            title:"Operating Room Bookings", size:"extraLargeBox", viewLink: $_SERVER['PHP_SELF']);
+            title:"Operating Room Bookings", size:"largeBox", viewLink: $_SERVER['PHP_SELF']);
         echo '</div>';
     }
     else if($_SESSION["accountType"] == "doctor") {
@@ -112,8 +112,8 @@ if(isset($_SESSION["username"])) {
         }
 
 
-        $columnNames1 = ["Schedule ID", "Date", "Start time", "End time", "Operating room ID"];
-        $attributes1 = ["operatingRoomScheduleID", "bookedDate", "startTime", "endTime", "operatingRoomID"];
+        $columnNames1 = ["Schedule ID", "Date", "Start time", "End time", "Operating room ID", "Patient ID"];
+        $attributes1 = ["operatingRoomScheduleID", "bookedDate", "startTime", "endTime", "operatingRoomID", "patientID"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery, title:"Operating Room Bookings",
             size:"largeBox", addItemPage: "addORBooking.php?ID=$doctorID", deleteLink: "deleteORBooking.php",
             updateLink: "updateORBooking.php", viewLink: $_SERVER['PHP_SELF']);
