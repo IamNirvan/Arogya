@@ -39,7 +39,7 @@ form {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: start;
 }
 
@@ -78,7 +78,7 @@ form {
 /* Radio button section */
 .radioButtonSection {
     width: 270px;
-    margin: 20px 10px;
+    margin: 20px;
 }
 
 .radioButtonSection div {
