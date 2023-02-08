@@ -6,7 +6,7 @@ function addSearchBar($assoc) {
     echo'
         <div id="searchInputPanel">
             <input type="text" id="searchBar" name="searchBar" placeholder="Search for record" required>
-            <button type="submit" name="searchButton">Search</button>
+            <button type="submit" name="searchButton"><img src="../views/images/icons/search.png">Search</button>
         </div>
         <div id="searchOptionPanel">';
             foreach($assoc as $displayText => $value) {
