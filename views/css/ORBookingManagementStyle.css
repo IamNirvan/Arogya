@@ -134,13 +134,13 @@ form {
 }
 
 #yesButton {
-    background-color: #0cac9c;
+    background-color: #65ae85;
     color: #fff;
     border: none;
 }
 
 #noButton {
-    background-color: #d85353;
+    background-color: #d55d5d;
     color: #fff;
     border: none;
 }
@@ -148,5 +148,5 @@ form {
 /* Error message styling */
 .errorMessage {
     font-size: 13px;
-    color: rgb(253, 55, 55);
+    color: #d55d5d;
 }

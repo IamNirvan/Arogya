@@ -36,40 +36,40 @@
 }
 
 #yesButton {
-    border: 1px solid #0cac9c;
+    border: 1px solid #65ae85;
     background-color: transparent;
-    color: #0cac9c;
+    color: #65ae85;
 }
 
 #yesButton:hover {
-    background-color: #0cac9c;
+    background-color: #65ae85;
     color: #fff;
     transition: 0.4s;
 }
 
 #yesButton:not(:hover) {
-    border: 1px solid #0cac9c;
+    border: 1px solid #65ae85;
     background-color: transparent;
-    color: #0cac9c;
+    color: #65ae85;
     transition: 0.4s;
 }
 
 #noButton {
-    border: 1px solid #d85353;
+    border: 1px solid #d55d5d;
     background-color: transparent;
-    color: #d85353;
+    color: #d55d5d;
 }
 
 #noButton:hover {
-    background-color: #d85353;
+    background-color: #d55d5d;
     color: #fff;
     transition: 0.4s;
 }
 
 #noButton:not(:hover) {
-    border: 1px solid #d85353;
+    border: 1px solid #d55d5d;
     background-color: transparent;
-    color: #d85353;
+    color: #d55d5d;
     transition: 0.4s;
 }
 
@@ -79,5 +79,5 @@
 /* Error message styling */
 .errorMessage {
     font-size: 13px;
-    color: rgb(253, 55, 55);
+    color: #d55d5d;
 }

@@ -35,24 +35,18 @@
     height: 40px;
     width: 10%;
     border-radius: 3px;
-    border: 1px solid #21304D;
-    background-color: #21304D;
+    border: 1px solid #31405e;
+    background-color: #31405e;
     color: #fff;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/*#searchInputPanel button:hover {*/
-/*    transition: 0.4s;*/
-/*    color: #fff;*/
-/*    background-color: #AA8550;*/
-/*}*/
-
-/*#searchInputPanel button:not(:hover) {*/
-/*    transition: 0.4s;*/
-/*    color: #AA8550;*/
-/*}*/
-
-
+#searchInputPanel button img {
+    margin: 0px 5px;
+}
 
 #searchOptionPanel {
     /* width: 10%; */

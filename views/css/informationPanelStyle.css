@@ -53,7 +53,7 @@
 
 .value {
     font-size: 13px;
-    color: #21304D;
+    color: #31405e;
 }
 
 .section:nth-child(2) {
@@ -72,12 +72,12 @@
 
 #infoUpdateButton {
     color: #fff;
-    background-color: #AA8550;
-    border: 1px solid #AA8550;
+    background-color: #b29771;
+    border: 1px solid #b29771;
 }
 
 #infoDeleteButton {
     color: #fff;
-    background-color: #d85353;
-    border: 1px solid #d85353;
+    background-color: #d55d5d;
+    border: 1px solid #d55d5d;
 }

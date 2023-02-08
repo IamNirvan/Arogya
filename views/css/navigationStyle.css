@@ -1,10 +1,11 @@
 .header-logo {
-    height: 100px;
+    height: 120px;
     /* width: 300px; */
-    background-image: url("../images/icons/logo.png");
+    background-image: url("../images/icons/logo2v2.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-color: #fff;
 }
 
 .header-user {
@@ -28,7 +29,7 @@
 .header-user-logout {
     padding: 8px 15px;
     /* background-color: rgb(255, 52, 52); */
-    background-color: #AA8550;
+    background-color: #b29771;
     border-radius: 3px;
     text-decoration: none;
     color: #fff;
@@ -42,9 +43,6 @@
 .navigation-ul-li {
     /* margin: 5px 0px; */
     margin: 10px;
-}
-
-.navigation-ul-li:hover {
     cursor: pointer;
 }
 
@@ -66,9 +64,9 @@
     transition: 0.4s;
 }
 
-.navigation-ul-li-a-inactive:not(:hover) {
-    transition: 0.4s;
-}
+/*.navigation-ul-li-a-inactive:not(:hover) {*/
+/*    transition: 0.4s;*/
+/*}*/
 
 /* This adds some space between the icon and the text */
 .navigation-ul-li img {
