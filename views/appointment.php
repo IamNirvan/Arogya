@@ -9,6 +9,10 @@ require('../utility/informationPanel.php');
 
 if(isset($_SESSION["username"])) {
     $currentdate = date('Y-m-d');
+
+    if(isset($_GET["error"])) {
+        echo '<script>alert("'.$_GET["error"].'")</script>';
+    }
 ?>
 
 <main class="app-main">

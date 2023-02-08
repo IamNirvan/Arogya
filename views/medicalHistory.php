@@ -6,6 +6,10 @@ require('../utility/table.php');
 
 if(isset($_SESSION["username"])) {
     $patientID = $_SESSION["ID"];
+
+    if(isset($_GET["error"])) {
+        echo '<script>alert("'.$_GET["error"].'")</script>';
+    }
 ?>
 
 <main class="app-main">

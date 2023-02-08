@@ -40,6 +40,10 @@ if(isset($_SESSION["username"])) {
                                     occupancyStatus AS 'Occupancy status'
                                     FROM roomoccupancy;";
     }
+
+    if(isset($_GET["error"])) {
+        echo '<script>alert("'.$_GET["error"].'")</script>';
+    }
 ?>
 
 <main class="app-main">

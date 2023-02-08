@@ -31,7 +31,11 @@ if(isset($_SESSION["username"])) {
                                     operatingroomID AS 'Operating room ID'
                                     FROM operatingroomschedule; ";
     }
-    ?>
+
+    if(isset($_GET["error"])) {
+        echo '<script>alert("'.$_GET["error"].'")</script>';
+    }
+?>
 
 <main class="app-main">
 <?php
