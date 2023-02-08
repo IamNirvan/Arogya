@@ -5,6 +5,9 @@ session_start();
 date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
+    //
+    // Get input
+    //
     $recId = $_GET["ID"];
     $date = stripData($_POST["date"]);
     $startTime = strtotime(stripData($_POST["startTime"]));
@@ -14,7 +17,9 @@ if(isset($_SESSION["username"])) {
     $doctorID = $_POST["doctorIDs"];
     $currentDate = date("Y-m-d");
     $currentTime = time();
-
+    //
+    // Validate input
+    //
     if($_SESSION["accountType"] == "receptionist") {
         $patientID = $_POST["patientIDs"];
     }
@@ -52,10 +57,13 @@ if(isset($_SESSION["username"])) {
         header("Location: ../views/updateAppointment.php?ID=$recId&invalidDurationError=End Time must be greater than the start time");
         die();
     }
-
-    $startTime =stripData($_POST["startTime"]);
-    $endTime = stripData($_POST["endTime"]);
-    $query = "UPDATE appointment SET 
+    //
+    // Execute query
+    //
+    try {
+        $startTime =stripData($_POST["startTime"]);
+        $endTime = stripData($_POST["endTime"]);
+        $query = "UPDATE appointment SET 
                bookeddate = '$date',
                startTime = '$startTime',
                endTime = '$endTime', 
@@ -65,10 +73,14 @@ if(isset($_SESSION["username"])) {
                appointmentStatus = '$appointmentStatus' 
                WHERE appointmentID = '$recId';";
 
-    if(handleInsertQuery($query)) {
-        header("Location: ../views/appointment.php");
+        if(handleInsertQuery($query)) {
+            header("Location: ../views/appointment.php");
+            die();
+        }
+        header("Location: ../views/appointment.php?error=Unable to update record");
     }
-    else {
-        echo "Failure!";
+    catch(Exception) {
+        header("Location: ../views/appointment.php?error=Unable to update record");
+        die();
     }
 }

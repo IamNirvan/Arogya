@@ -6,6 +6,9 @@ date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
     $patientID = $_SESSION["ID"];
+    //
+    // Get input
+    //
     $immunizationID = $_GET["ID"];
     $oldAppointmentID = $_GET["appointmentID"];
     $oldName = $_GET["immunizationName"];
@@ -26,19 +29,25 @@ if(isset($_SESSION["username"])) {
         header("Location: ../views/medicalHistory.php");
         die();
     }
-    else {
+    //
+    // Execute query
+    //
+    try {
         $dateSelectQuery = "SELECT bookedDate from appointment WHERE appointmentID = '$appointmentID';";
         $dateRecord = handleSelectQuery($dateSelectQuery);
 
         if($dateRecord) {
             $updateQuery = "UPDATE immunizations SET name = '$immunizationName' WHERE immunizationID = '$immunizationID';";
-            if(handleUpdateQuery($updateQuery)) {
-                header("Location: ../views/medicalHistory.php");
+            if(!handleUpdateQuery($updateQuery)) {
+                header("Location: ../views/medicalHistory.php?error=Unable to update record");
+                die();
             }
-            else {
-                echo "Failure!";
-            }
+            header("Location: ../views/medicalHistory.php");
         }
+    }
+    catch (Exception) {
+        header("Location: ../views/medicalHistory.php?error=Unable to update record");
+        die();
     }
 }
 

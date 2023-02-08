@@ -5,8 +5,11 @@ session_start();
 date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
-    $surgeryID = $_GET["ID"];
     $patientID = $_SESSION["ID"];
+    //
+    // Get input
+    //
+    $surgeryID = $_GET["ID"];
     $surgeryName = stripData($_POST["surgeryName"]);
     $outcome = stripData($_POST["surgeryOutcome"]);
     $appointmentID = $_POST["appointmentIDs"];
@@ -21,24 +24,32 @@ if(isset($_SESSION["username"])) {
         header("location: ../views/updateSurgery.php?ID=$surgeryID&surgeryOutcomeError=Invalid input");
         die();
     }
-    $dateSelectQuery = "SELECT bookedDate from appointment WHERE appointmentID = '$appointmentID';";
-    $dateRecord = handleSelectQuery($dateSelectQuery);
+    //
+    // Execute query
+    //
+    try {
+        $dateSelectQuery = "SELECT bookedDate from appointment WHERE appointmentID = '$appointmentID';";
+        $dateRecord = handleSelectQuery($dateSelectQuery);
 
-    if($dateRecord) {
-        $bookedDate = mysqli_fetch_assoc($dateRecord)["bookedDate"];
-        $updateQuery = "UPDATE surgeries SET 
+        if($dateRecord) {
+            $bookedDate = mysqli_fetch_assoc($dateRecord)["bookedDate"];
+            $updateQuery = "UPDATE surgeries SET 
                                 name = '$surgeryName',
                                 surgeryDate = '$bookedDate',
                                 outcome = '$outcome',
                                 patientID = '$patientID',
                                 appointmentID = '$appointmentID'
                                 WHERE surgeryID = '$surgeryID';";
-        if(handleUpdateQuery($updateQuery)) {
+            if(!handleUpdateQuery($updateQuery)) {
+                header("Location: ../views/medicalHistory.php?error=Unable to update record");
+                die();
+            }
             header("Location: ../views/medicalHistory.php");
         }
-        else {
-            echo "Failure!";
-        }
+    }
+    catch(Exception) {
+        header("Location: ../views/medicalHistory.php?error=Unable to update record");
+        die();
     }
 }
 

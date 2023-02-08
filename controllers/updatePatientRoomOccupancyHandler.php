@@ -5,6 +5,9 @@ session_start();
 date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
+    //
+    // Get input
+    //
     $occupancyID = $_GET["ID"];
     $startDate = $_GET["startDate"];
     $endDate = $_GET["endDate"];
@@ -33,7 +36,9 @@ if(isset($_SESSION["username"])) {
         header("Location: ../views/updatePatientRoomOccupancy.php?invalidDurationError=Invalid end time");
         die();
     }
-
+    //
+    // Execute the query
+    //
     try {
         $startTime = $_GET["startTime"];
         $endTime = $_GET["endTime"];
@@ -46,17 +51,15 @@ if(isset($_SESSION["username"])) {
                                         patientID = '$patientID' 
                                         WHERE occupancyID = '$occupancyID';";
 
-        if(handleUpdateQuery($updateRoomOccupancyQuery)) {
-            header("Location: ../views/patientRoomOccupancy.php");
-            die();
-        }
-        else {
+        if(!handleUpdateQuery($updateRoomOccupancyQuery)) {
             header("Location: ../views/patientRoomOccupancy.php?error=Error when making booking");
             die();
         }
+        header("Location: ../views/patientRoomOccupancy.php");
     }
     catch(Exception) {
-        header("Location: ../views/patientRoomOccupancy.php?error=Error when making booking");
+        header("Location: ../views/patientRoomOccupancy.php?error=Error when updating");
+        die();
     }
 }
 

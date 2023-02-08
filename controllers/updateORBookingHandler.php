@@ -5,8 +5,11 @@ session_start();
 date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
-    $ORBookingID = $_GET["ID"];
     $doctorID = $_SESSION["ID"];
+    //
+    // Get input
+    //
+    $ORBookingID = $_GET["ID"];
     $date = $_GET["date"];
     $startTime = strtotime($_GET["startTime"]);
     $endTime = strtotime($_GET["endTime"]);
@@ -27,7 +30,9 @@ if(isset($_SESSION["username"])) {
         header("Location: ../views/updateORBooking.php?invalidDurationError=Invalid end date");
         die();
     }
-
+    //
+    // Execute the query
+    //
     try {
         $startTime = $_GET["startTime"];
         $endTime = $_GET["endTime"];
@@ -38,18 +43,15 @@ if(isset($_SESSION["username"])) {
                                  operatingRoomID = '$operatingRoomID'
                                  WHERE operatingroomscheduleID = '$ORBookingID';";
 
-
-        if(handleUpdateQuery($updateORBookingQuery)) {
-            header("Location: ../views/ORSchedule.php");
+        if(!handleUpdateQuery($updateORBookingQuery)) {
+            header("Location: ../views/ORSchedule.php?error=Error when updating");
             die();
         }
-        else {
-            header("Location: ../views/updateORBooking.php?error=Error when making booking");
-            die();
-        }
+        header("Location: ../views/ORSchedule.php");
     }
     catch(Exception) {
-        header("Location: ../views/updateORBooking.php?error=Error when making booking");
+        header("Location: ../views/ORSchedule.php?error=Error when updating");
+        die();
     }
 }
 

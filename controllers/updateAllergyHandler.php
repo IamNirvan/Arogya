@@ -6,6 +6,9 @@ date_default_timezone_set("Asia/Colombo");
 
 if(isset($_SESSION["username"])) {
     $patientID = $_SESSION["ID"];
+    //
+    // Get input
+    //
     $allergyID = $_GET["ID"];
     $oldName = $_GET["allergyName"];
     $allergyName = stripData($_POST["allergyName"]);
@@ -24,22 +27,27 @@ if(isset($_SESSION["username"])) {
         header("Location: ../views/medicalHistory.php");
         die();
     }
-    else {
+    //
+    // Execute query
+    //
+    try {
         $selectQuery = "SELECT * FROM allergies WHERE lower(name) = lower('$allergyName') AND patientID = '$patientID'";
         $records = handleSelectQuery($selectQuery);
+
         if(!$records) {
-            $updateQuery = "UPDATE allergies SET name = '$allergyName' WHERE allergyID = '$allergyID';";
-            if(handleUpdateQuery($updateQuery)) {
-                header("Location: ../views/medicalHistory.php");
+            $updateQuery = "UPDATE alleries SET name = '$allergyName' WHERE allergyID = '$allergyID';";
+            if(!handleUpdateQuery($updateQuery)) {
+                header("location: ../views/updateAllergy.php?ID=$allergyID&allergyNameError=Allergy already exists");
+                die();
             }
-            else {
-                echo "Failure!";
-            }
-        }
-        else {
-            header("location: ../views/updateAllergy.php?ID=$allergyID&allergyNameError=Allergy already exists");
+            header("Location: ../views/medicalHistory.php");
             die();
         }
+        header("location: ../views/updateAllergy.php?ID=$allergyID&allergyNameError=Allergy already exists");
+    }
+    catch(Exception) {
+        header("location: ../views/medicalHistory.php?ID=$allergyID&error=Error when updating");
+        die();
     }
 }
 
