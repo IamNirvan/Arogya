@@ -167,7 +167,7 @@
     color: #fff;
     border: 1px solid #d55d5d;
     background-color: #d55d5d;
-    width: 50px;
+    width: 60px;
     height: 30px;
     cursor: pointer;
 }
@@ -182,7 +182,7 @@
     color: #fff;
     border: 1px solid #b29771;
     background-color: #b29771;
-    width: 50px;
+    width: 60px;
     height: 30px;
     cursor: pointer;
 }
@@ -197,7 +197,22 @@
     color: #fff;
     border: 1px solid #31405e;
     background-color: #31405e;
-    width: 50px;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#tableManageButton {
+    padding: 8px 15px;
+    border-radius: 3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid #65ae85;
+    background-color: #65ae85;
+    width: 60px;
     height: 30px;
     cursor: pointer;
 }
@@ -232,7 +247,7 @@
     background-color: #e5e5e5;
     border-radius: 3px;
     margin-bottom: 2px;
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
 }
 
