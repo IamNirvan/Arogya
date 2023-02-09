@@ -7,7 +7,7 @@
 // 2. largeBox
 // 3. smallBox
 function addTable($columnNames, $attributes, $query, $title, $size, $openItemPage = false, $addItemPage = false,
-                  $deleteLink = null, $updateLink = null, $viewLink = null) {
+                  $deleteLink = null, $updateLink = null, $viewLink = null, $manageLink = null) {
     //
     // Determine the size of the table's container
     //
@@ -33,7 +33,7 @@ function addTable($columnNames, $attributes, $query, $title, $size, $openItemPag
         </div>
         <div class="content">';
                 renderTable(columnNames: $columnNames, attributes: $attributes, query: $query, deleteLink: $deleteLink,
-                    updateLink: $updateLink, viewLink: $viewLink);
+                    updateLink: $updateLink, viewLink: $viewLink, manageLink: $manageLink);
         echo '
         </div>
     </div>';
@@ -82,7 +82,7 @@ function addTable($columnNames, $attributes, $query, $title, $size, $openItemPag
 //        echo '</form>';
 //    }
 //}
-function renderTable($columnNames, $attributes, $query, $deleteLink = null, $updateLink = null, $viewLink = null) {
+function renderTable($columnNames, $attributes, $query, $deleteLink = null, $updateLink = null, $viewLink = null, $manageLink = null) {
     //
     // Display the table headings
     //
@@ -100,6 +100,9 @@ function renderTable($columnNames, $attributes, $query, $deleteLink = null, $upd
             }
             if($viewLink != null) {
                 echo '<div>View</div>';
+            }
+            if($manageLink != null) {
+                echo '<div>Manage</div>';
             }
         echo '</div>';
 
@@ -121,6 +124,9 @@ function renderTable($columnNames, $attributes, $query, $deleteLink = null, $upd
                 }
                 if($viewLink != null) {
                     echo '<div><a id="tableViewButton" href="'.$viewLink.'?ID='.$fetched[$attributes[0]].'">View</a></div>';
+                }
+                if($manageLink != null) {
+                    echo '<div><a id="tableManageButton" href="'.$manageLink.'?ID='.$fetched[$attributes[0]].'">Manage</a></div>';
                 }
             echo '</div> ';
         }

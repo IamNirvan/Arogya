@@ -2,11 +2,14 @@
 
 $data = [
     "login.php" => "<link rel=\"stylesheet\" href=\"css/loginStyle.css\">\n",
-    "register.php" => "<link rel=\"stylesheet\" href=\"css/registerStyle.css\">\n",
+//    "register.php" => "<link rel=\"stylesheet\" href=\"css/registerStyle.css\">\n",
+    "manageAccount.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
 //    "appointment.php" => "<link rel=\"stylesheet\" href=\"css/appointmentStyle.css\">\n",
     "patientRegistration.php" => "<link rel=\"stylesheet\" href=\"css/patientRegistrationStyle.css\">\n",
+    "deletePatientAccount.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addAppointment.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "updateAppointment.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
+    "manageAppointment.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "deleteAppointment.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addORBooking.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "updateORBooking.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
@@ -31,7 +34,9 @@ $data = [
     "deleteImmunization.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addSurgery.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "updateSurgery.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
-    "deleteSurgery.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n"
+    "deleteSurgery.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
+    "addUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
+    "updateUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n"
 ];
 
 

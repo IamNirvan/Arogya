@@ -15,8 +15,23 @@ function checkAlphabetChars($input) : bool{
     return (preg_match("/^[A-Za-z]{2,100}/", $input));
 }
 
+function checkNumbers($input) {
+    return preg_match("/^[0-9]+$/", $input);
+}
+
 function validateNIC($NIC) {
     return strlen($NIC) == 12;
+}
+
+function validateNIC2($NIC, $query) {
+    $rawData = handleSelectQuery($query);
+    //
+    // Return true if the contact number has a valid length and
+    // does not exist in the table
+    //
+
+    return (preg_match("/^([0-9]{9}[x|X|v|V]|[0-9]{12})$/", $NIC)) && $rawData == false;
+//    return strlen($contactNumber) == 10 && $rawData == false;
 }
 
 function validatePassword($password) {

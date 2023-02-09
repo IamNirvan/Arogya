@@ -164,8 +164,7 @@ if(isset($_SESSION["username"])) {
                                     endTime as 'End time', 
                                     description as 'Reason', 
                                     patientID as 'Patient ID', 
-                                    employeeID as 'Employee ID', 
-                                    appointmentStatus as 'Status' 
+                                    employeeID as 'Employee ID'
                                     FROM appointment WHERE appointmentID = '$recId' AND employeeID = '$doctorID' AND bookedDate >= '$currentdate';";
         }
         else {
@@ -175,8 +174,7 @@ if(isset($_SESSION["username"])) {
                                     endTime as 'End time', 
                                     description as 'Reason', 
                                     patientID as 'Patient ID', 
-                                    employeeID as 'Employee ID', 
-                                    appointmentStatus as 'Status' 
+                                    employeeID as 'Employee ID' 
                                     FROM appointment WHERE employeeID = '$doctorID' AND  bookedDate >= '$currentdate';";
         }
         //
@@ -207,15 +205,17 @@ if(isset($_SESSION["username"])) {
         if(isset($_GET["searchButton"])) {
             $option = $_GET['searchOption'];
             $term = $_GET['searchBar'];
-            $tableDataQuery = "SELECT * FROM appointment WHERE $option = '$term' AND employeeID = '$doctorID' AND bookedDate >= '$currentdate';";
+            $tableDataQuery = "SELECT * FROM appointment WHERE $option = '$term' AND employeeID = '$doctorID' 
+                            AND bookedDate >= '$currentdate' AND appointmentStatus = 'open';";
         }
         else {
-            $tableDataQuery = "SELECT * FROM appointment WHERE employeeID = '$doctorID' AND bookedDate >= '$currentdate';";
+            $tableDataQuery = "SELECT * FROM appointment WHERE employeeID = '$doctorID' AND 
+                                bookedDate >= '$currentdate' AND appointmentStatus = 'open';";
         }
-        $columnNames1 = ["ID", "Date", "Start time", "End time", "Patient ID", "Status"];
-        $attributes1 = ["appointmentID", "bookedDate", "startTime", "endTime", "patientID", "appointmentStatus"];
+        $columnNames1 = ["ID", "Date", "Start time", "End time", "Patient ID"];
+        $attributes1 = ["appointmentID", "bookedDate", "startTime", "endTime", "patientID"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery,
-            title:"Today's Appointments", size:"extraLargeBox", viewLink: $_SERVER['PHP_SELF']);
+            title:"Today's Appointments", size:"extraLargeBox", viewLink: $_SERVER['PHP_SELF'], manageLink: "manageAppointment.php");
         echo '</div>';
     }
 ?>

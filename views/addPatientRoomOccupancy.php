@@ -19,11 +19,6 @@ if(isset($_SESSION["username"])) {
         $endTime = $_POST["endTime"];
         $roomType = $_POST["roomType"];
 
-
-        // Gets the occupancies outside the date range
-//        SELECT * FROM roomoccupancy WHERE (!((roomoccupancy.startDate >= '2023-02-15') AND (roomoccupancy.endDate <= '2023-02-20')))
-
-//        Outside of date and time
         $availableRoomsQuery = "SELECT roomID, roomNumber 
                                 FROM room 
                                 WHERE roomID NOT IN 
@@ -31,8 +26,6 @@ if(isset($_SESSION["username"])) {
                                 (roomoccupancy.endDate <= '$endDate')) AND roomID NOT IN 
                                 (SELECT roomID FROM roomoccupancy WHERE (roomoccupancy.startTime >= '$startTime') AND 
                                 (roomoccupancy.endTime <= '$endTime')))";
-
-
 
 //        Old query
 //        $availableRoomsQuery = "SELECT

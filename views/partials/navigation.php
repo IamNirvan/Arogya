@@ -43,6 +43,16 @@
                             Appointments
                         </a>
                         </li>
+                        <li class="navigation-ul-li">
+                            <a ';
+                            if($path == "manageAccount.php") {echo "class=navigation-ul-li-a-active" ; }
+                            else {echo "class=navigation-ul-li-a-inactive";};
+                            echo'
+                            href="manageAccount.php">
+                            <img src="images/icons/settings.png">
+                            Manage account
+                        </a>
+                        </li>
                     </ul>
                 </nav> ';
                 }

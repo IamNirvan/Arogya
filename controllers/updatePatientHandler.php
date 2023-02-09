@@ -59,10 +59,10 @@ if(isset($_SESSION["username"])) {
         die();
     }
 
-    if(!checkAlphabetChars($address)) {
-        header("Location: ../views/manageAccount.php?addressError=Invalid address");
-        die();
-    }
+//    if(!checkAlphabetChars($address)) {
+//        header("Location: ../views/manageAccount.php?addressError=Invalid address");
+//        die();
+//    }
     //
     // Execute query
     //
