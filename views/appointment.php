@@ -80,9 +80,8 @@ if(isset($_SESSION["username"])) {
         $attributes1 = ["appointmentID", "bookedDate", "startTime", "endTime", "patientID", "employeeID",
             "appointmentStatus"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery,
-            title:"Appointments", size:"largeBox", addItemPage: "addAppointment.php",
-            updateLink: "updateAppointment.php", deleteLink: "deleteAppointment.php",
-            viewLink: $_SERVER['PHP_SELF']);
+            title:"Appointments", size:"largeBox", addItemPage: "addAppointment.php", deleteLink: "deleteAppointment.php",
+            updateLink: "updateAppointment.php", viewLink: $_SERVER['PHP_SELF']);
         echo '</div>';
     }
     else if($_SESSION["accountType"] == "patient") {
