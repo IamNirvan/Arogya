@@ -20,10 +20,11 @@ if(isset($_SESSION["username"])) {
             //
             // Get the number of available patient rooms
             //
-            $data1 = handleSelectQuery("SELECT 
-                                                COUNT(roomoccupancy.roomID) AS roomID 
-                                                FROM roomoccupancy INNER JOIN room 
-                                                WHERE roomoccupancy.roomID != room.roomID;");
+            $data1 = handleSelectQuery("SELECT
+                                                COUNT(roomID) AS roomID
+                                                FROM room WHERE roomID NOT IN
+                                                (SELECT roomID from roomoccupancy WHERE occupancyStatus = 'active');");
+
             if($data1) {
                 $data1Fetched = mysqli_fetch_assoc($data1);
                 addCard("Available patient rooms", $data1Fetched["roomID"], "images/icons/bed-black.png");
@@ -48,9 +49,13 @@ if(isset($_SESSION["username"])) {
             // To get the number available ORs.
             //
             $data3 = handleSelectQuery("SELECT 
-                                                COUNT(operatingroomschedule.operatingRoomID) AS roomID 
-                                                FROM operatingroomschedule INNER JOIN operatingroom 
-                                                WHERE operatingroomschedule.operatingRoomID != operatingroom.operatingRoomID;");
+                                                COUNT(operatingRoomID) AS roomID 
+                                                FROM operatingroom WHERE operatingRoomID NOT IN
+                                                (SELECT operatingRoomID from operatingroomschedule);");
+//            $data3 = handleSelectQuery("SELECT
+//                                                COUNT(operatingroomschedule.operatingRoomID) AS roomID
+//                                                FROM operatingroomschedule INNER JOIN operatingroom
+//                                                WHERE operatingroomschedule.operatingRoomID != operatingroom.operatingRoomID;");
             if($data3) {
                 $data3Fetched = mysqli_fetch_assoc($data3);
                 addCard("Available Operating Rooms", $data3Fetched["roomID"], "images/icons/OR-black.png");
