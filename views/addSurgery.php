@@ -40,10 +40,6 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <select id="appointmentSelect" name="appointmentIDs">
                             <?php
-                            //
-                            // the query makes sure that examinations that have an
-                            // appointment ID are not shown
-                            //
                             $query = "SELECT 
                                         appointment.appointmentID, 
                                         appointment.bookedDate 
@@ -72,7 +68,6 @@ if(isset($_SESSION["username"])) {
             </form>
         </div>
     </main>
-
     <?php
 }
 else {

@@ -8,8 +8,6 @@ require('../utility/searchPanel.php');
 require('../utility/informationPanel.php');
 
 if(isset($_SESSION["username"])) {
-    $currentdate = date('Y-m-d');
-
     if(isset($_GET["error"])) {
         echo '<script>alert("'.$_GET["error"].'")</script>';
     }
@@ -93,8 +91,8 @@ if(isset($_SESSION["username"])) {
         $columnNames1 = ["ID", "First name", "Last name"];
         $attributes1 = ["employeeID", "firstName", "lastName"];
         addTable(columnNames: $columnNames1, attributes: $attributes1, query:$tableDataQuery,
-            title:"Receptionist", size:"largeBox", addItemPage: "addReceptionist.php", deleteLink: "deleteReceptionist.php",
-            updateLink: "updateReceptionist.php", viewLink: $_SERVER['PHP_SELF']);
+            title:"Receptionist", size:"largeBox", addItemPage: "addReceptionist.php",
+            deleteLink: "deleteReceptionist.php", updateLink: "updateReceptionist.php", viewLink: $_SERVER['PHP_SELF']);
         echo '</div>';
     ?>
 </main>
@@ -103,4 +101,4 @@ if(isset($_SESSION["username"])) {
 else {
     header("Location: login.php");
 }
-?><?php
+?>

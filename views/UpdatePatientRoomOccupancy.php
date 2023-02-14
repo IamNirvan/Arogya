@@ -10,11 +10,12 @@ if(isset($_SESSION["username"])) {
     $doctorID = $_SESSION["ID"];
     $currentDate = date("Y-m-d");
     $currentTime = time();
+    $globalFetch = null;
+    $availableRoomsQuery = "SELECT * from room WHERE roomID;";
+    $roomType = null;
 
     if($records) {
         $globalFetch = mysqli_fetch_assoc($records);
-//        var_dump($globalFetch);
-//        die();
     }
 
     if(isset($_POST["availableRoomsButton"])) {
@@ -29,14 +30,11 @@ if(isset($_SESSION["username"])) {
                                     (SELECT
                                     roomID
                                     FROM roomoccupancy
-                                    WHERE (startDate >= '$startDate' OR (endDate >= '$startDate' AND endDate<= '$endDate')))
-                                    AND roomTypeID = '$roomType';";
-    }
-    else {
-        $availableRoomsQuery = "SELECT * from room WHERE roomID;";
+                                    WHERE (startDate >= '$startDate' OR (endDate >= '$startDate' 
+                                    AND endDate<= '$endDate'))) AND roomTypeID = '$roomType';";
     }
 
-    ?>
+?>
     <main class="app-main">
         <div class="heading">
             <h3>Update a Room Booking</h3>
@@ -83,7 +81,8 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="startTimePicker" name="startTime"
                             <?php
-                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["startTime"].'"' : 'value="'. $globalFetch["startTime"].'"' ;
+                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["startTime"].
+                                    '"' : 'value="'. $globalFetch["startTime"].'"' ;
                             ?>
                                required>
                         <br>
@@ -98,7 +97,8 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="endTimePicker" name="endTime"
                             <?php
-                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["endTime"].'"' : 'value="'. $globalFetch["endTime"].'"' ;
+                                echo (isset($_POST["availableRoomsButton"])) ? 'value="'. $_POST["endTime"].
+                                    '"' : 'value="'. $globalFetch["endTime"].'"' ;
                             ?>
                                required>
                         <br>
@@ -109,9 +109,9 @@ if(isset($_SESSION["username"])) {
                             ?></label>
                     </div>
                     <div class="formSection">
-                        <label class="inputLabel" for="patientTextBox">Room type</label>
+                        <label class="inputLabel" for="roomType">Room type</label>
                         <br>
-                        <select name="roomType" required>
+                        <select name="roomType" id="roomType" required>
                             <?php
                             $query = "SELECT * FROM roomtype";
                             $rawData = handleSelectQuery($query);
@@ -127,7 +127,6 @@ if(isset($_SESSION["username"])) {
                                 $typeID = $fetched["roomTypeID"];
                                 $typeName = $fetched["typeName"];
 
-
                                 if(isset($_POST["availableRoomsButton"])) {
                                     if($typeID == $roomType) {
                                         echo "<option value=$typeID selected>[$typeID] $typeName</option>";
@@ -135,20 +134,15 @@ if(isset($_SESSION["username"])) {
                                     else {
                                         echo "<option value=$typeID>[$typeID] $typeName</option>";
                                     }
-
                                 }
                                 else {
-
                                     if($typeID == $fetched2["roomTypeID"]) {
                                         echo "<option value=$typeID selected>[$typeID] $typeName</option>";
                                     }
                                     else {
                                         echo "<option value=$typeID>[$typeID] $typeName</option>";
                                     }
-
-
                                 }
-
                             }
                             ?>
                         </select>
@@ -158,21 +152,23 @@ if(isset($_SESSION["username"])) {
                     <button type="submit" name="availableRoomsButton">get available rooms</button>
                 </div>
             </form>
-
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.$recId.'&startDate='.$globalFetch["startDate"].'&endDate='.$globalFetch["endDate"].'&startTime='.$globalFetch["startTime"].'&endTime='.$globalFetch["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.$recId.'&startDate='.
+                    $_POST["startDate"].'&endDate='.$_POST["endDate"].'&startTime='.
+                    $_POST["startTime"].'&endTime='.$_POST["endTime"].
+                    '" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.$recId.'&" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updatePatientRoomOccupancyHandler.php?ID='.
+                    $recId.'&" method="POST" autocomplete="off">';
             }
             ?>
-
             <div id="mainSection">
                 <div class="formSection">
-                    <label class="inputLabel" for="patientTextBox">Patient</label>
+                    <label class="inputLabel" for="patientIDs">Patient</label>
                     <br>
-                    <select name="patientIDs" required>
+                    <select name="patientIDs" id="patientIDs" required>
                         <?php
                         $query = "SELECT 
                                     patient.patientID, 
@@ -183,12 +179,14 @@ if(isset($_SESSION["username"])) {
                                     (SELECT 
                                     operatingroomschedule.patientID 
                                     FROM operatingroomschedule 
-                                    WHERE operatingroomschedule.bookedDate >= '2023-02-05' AND patientID != '".$globalFetch["patientID"]."') 
+                                    WHERE operatingroomschedule.bookedDate >= '2023-02-05'
+                                    AND patientID != '".$globalFetch["patientID"]."') 
                                     AND patient.patientID NOT IN 
                                     (SELECT 
                                     roomoccupancy.patientID 
                                     FROM roomoccupancy 
-                                    WHERE roomoccupancy.endDate >= '2023-02-05' AND patientID != '".$globalFetch["patientID"]."');";
+                                    WHERE roomoccupancy.endDate >= '2023-02-05' 
+                                    AND patientID != '".$globalFetch["patientID"]."');";
                         $rawData = handleSelectQuery($query);
 
                         while($fetched = mysqli_fetch_assoc($rawData)) {
@@ -197,7 +195,6 @@ if(isset($_SESSION["username"])) {
                             $lastName = $fetched["lastName"];
                             echo "<option value=$patientID>[$patientID] $firstName  $lastName</option>";
                         }
-
                         ?>
                     </select>
                 </div>
@@ -206,7 +203,6 @@ if(isset($_SESSION["username"])) {
                     <br>
                     <select name="roomIDs" id="roomSelect" required>
                         <?php
-                        if($availableRoomsQuery != null) {
                             $rawData = handleSelectQuery($availableRoomsQuery);
 
                             while($fetched = mysqli_fetch_assoc($rawData)) {
@@ -225,7 +221,6 @@ if(isset($_SESSION["username"])) {
                                     }
                                 }
                             }
-                        }
                         ?>
                     </select>
                 </div>

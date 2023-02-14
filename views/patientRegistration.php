@@ -1,6 +1,7 @@
 <?php 
 $pageTitle = "Registration";
-require('partials/header.php'); 
+require('partials/header.php');
+
 ?>
     <!-- This container is for the background color and text -->
     <div class="container">
@@ -48,7 +49,7 @@ require('partials/header.php');
                     <div>
                         <label class="inputLabel" for="maleRadioBtn">Male</label>
                         <input type="radio" value="male" id="maleRadioBtn" name="genderOption" required>
-                        <label class="inputLabel" for="doctorRadioBtn">Female</label>
+                        <label class="inputLabel" for="femaleRadioBtn">Female</label>
                         <input type="radio" value="female" id="femaleRadioBtn" name="genderOption">
                     </div>
                 </div>
@@ -102,7 +103,7 @@ require('partials/header.php');
                 <div class="formSection">
                     <label class="inputLabel" for="addressTextBox">Address</label>
                     <br>
-                    <textarea id="addressTextBox" name="address" column=40 row=5 required></textarea>
+                    <textarea id="addressTextBox" name="address" required></textarea>
                     <br>
                 </div>
             </div>

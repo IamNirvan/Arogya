@@ -13,7 +13,6 @@ if(isset($_SESSION["username"])) {
             <div class="heading">
                 <h3>Delete Appointment [<?php echo $recId?>]?</h3>
             </div>
-            <!-- This allows the record ID to be passed into the delete control handler.-->
             <form action="../controllers/deleteAppointmentHandler.php?ID=<?php echo $recId?>" method="POST"
                   autocomplete="off">
                 <div class="deleteOptions">

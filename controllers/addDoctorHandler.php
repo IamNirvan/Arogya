@@ -14,7 +14,8 @@ $gender = stripData($_POST["genderOption"]);
 $specialization = stripData($_POST["specialization"]);
 
 
-if(!validateUsername($username, "SELECT username from employeeaccount WHERE lower(username) = lower('$username')")) {
+if(!validateUsername($username, "SELECT username from employeeaccount 
+                WHERE lower(username) = lower('$username')")) {
     header("Location: ../views/addDoctor.php?usernameError=Username is taken");
     die();
 }
@@ -29,17 +30,13 @@ if(!checkAlphabetChars($firstName)) {
     die();
 }
 
-//if(!checkAlphabetChars($middleName)) {
-//    header("Location: ../views/addDoctor.php?middleNameError=Invalid input");
-//    die();
-//}
-
 if(!checkAlphabetChars($lastName)) {
     header("Location: ../views/addDoctor.php?lastNameError=Invalid input");
     die();
 }
 
-if(!validateContactNumber($contactNumber, "SELECT contactNumber from employee WHERE contactNumber = '$contactNumber'")) {
+if(!validateContactNumber($contactNumber, "SELECT contactNumber from employee 
+                     WHERE contactNumber = '$contactNumber'")) {
     header("Location: ../views/addDoctor.php?contactNumberError=Invalid contact number");
     die();
 }
@@ -50,13 +47,15 @@ if(!checkAlphabetChars($specialization)) {
 }
 
 try {
-    $registerEmployeeQuery = "INSERT INTO employee VALUES(NULL, '$firstName', '$middleName', '$lastName', '$contactNumber', '$gender', '$specialization')";
+    $registerEmployeeQuery = "INSERT INTO employee VALUES(NULL, '$firstName', '$middleName', 
+                            '$lastName', '$contactNumber', '$gender', '$specialization')";
 
     if (handleInsertQuery($registerEmployeeQuery)) {
         $getEmployeeIDQuery = "SELECT employeeID FROM employee ORDER BY employeeID DESC LIMIT 1;";
         $records = handleSelectQuery($getEmployeeIDQuery);
         $employeeID = mysqli_fetch_assoc($records)['employeeID'];
-        $registerEmployeeAccountQuery = "INSERT INTO employeeaccount VALUES(NULL, '$username', '$password', 'doctor', '$employeeID')";
+        $registerEmployeeAccountQuery = "INSERT INTO employeeaccount VALUES(NULL, '$username', 
+                                   '$password', 'doctor', '$employeeID')";
 
         if (handleInsertQuery($registerEmployeeAccountQuery)) {
             header("Location: ../views/manageDoctor.php");

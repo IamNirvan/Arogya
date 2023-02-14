@@ -22,18 +22,18 @@ if(isset($_SESSION["username"])) {
     //
     if($startDate == $currentDate){
       if($startTime < $currentTime) {
-          header("Location: ../views/updatePatientRoomOccupancy.php?invalidStartTimeError=Invalid start time");
+          header("Location: ../views/updatePatientRoomOccupancy.php?ID=$occupancyID&
+          invalidStartTimeError=Invalid start time");
           die();
       }
+        if($endTime <= $startTime) {
+            header("Location: ../views/updatePatientRoomOccupancy.php?ID=$occupancyID&invalidDurationError=Invalid end time");
+            die();
+        }
     }
 
     if($endDate < $startDate) {
-        header("Location: ../views/updatePatientRoomOccupancy.php?invalidEndDateError=Invalid end date");
-        die();
-    }
-
-    if($endTime <= $startTime) {
-        header("Location: ../views/updatePatientRoomOccupancy.php?invalidDurationError=Invalid end time");
+        header("Location: ../views/updatePatientRoomOccupancy.php?ID=$occupancyID&invalidEndDateError=Invalid end date");
         die();
     }
     //

@@ -11,7 +11,6 @@ if(isset($_SESSION["username"])) {
 
 <main class="app-main">
 <?php
-
     if($_SESSION["accountType"] == "receptionist") {
         //
         // Cards section
@@ -23,7 +22,8 @@ if(isset($_SESSION["username"])) {
             $data1 = handleSelectQuery("SELECT
                                                 COUNT(roomID) AS roomID
                                                 FROM room WHERE roomID NOT IN
-                                                (SELECT roomID from roomoccupancy WHERE occupancyStatus = 'active');");
+                                                (SELECT roomID from roomoccupancy 
+                                                WHERE occupancyStatus = 'active');");
 
             if($data1) {
                 $data1Fetched = mysqli_fetch_assoc($data1);
@@ -37,7 +37,8 @@ if(isset($_SESSION["username"])) {
             //
             $data2 = handleSelectQuery("SELECT 
                                                 COUNT(appointmentID) AS appointmentID 
-                                                FROM appointment WHERE appointmentStatus = 'open' AND bookedDate = '$currentDate'");
+                                                FROM appointment WHERE appointmentStatus = 'open' 
+                                                AND bookedDate = '$currentDate'");
             if($data2) {
                 $data2Fetched = mysqli_fetch_assoc($data2);
                 addCard("Today's appointments", $data2Fetched["appointmentID"], "images/icons/appointment-black.png");
@@ -52,10 +53,7 @@ if(isset($_SESSION["username"])) {
                                                 COUNT(operatingRoomID) AS roomID 
                                                 FROM operatingroom WHERE operatingRoomID NOT IN
                                                 (SELECT operatingRoomID from operatingroomschedule);");
-//            $data3 = handleSelectQuery("SELECT
-//                                                COUNT(operatingroomschedule.operatingRoomID) AS roomID
-//                                                FROM operatingroomschedule INNER JOIN operatingroom
-//                                                WHERE operatingroomschedule.operatingRoomID != operatingroom.operatingRoomID;");
+
             if($data3) {
                 $data3Fetched = mysqli_fetch_assoc($data3);
                 addCard("Available Operating Rooms", $data3Fetched["roomID"], "images/icons/OR-black.png");
@@ -124,17 +122,21 @@ if(isset($_SESSION["username"])) {
         //
         // Get the open appointments
         //
-        $query1 = "SELECT appointmentID, startTime, endTime, patientID, employeeID FROM appointment WHERE appointmentStatus = 'open' AND patientID = '$patientID';";
+        $query1 = "SELECT appointmentID, startTime, endTime, patientID, employeeID FROM appointment 
+                   WHERE appointmentStatus = 'open' AND patientID = '$patientID';";
         $columnNames1 = ["ID", "Start", "End", "Patient ID", "Employee ID"];
         $attributes1 = ["appointmentID", "startTime", "endTime", "patientID", "employeeID"];
-        addTable(columnNames: $columnNames1, attributes: $attributes1, query:$query1, title:"Open Appointments", size:"largeBox", openItemPage:"appointment.php");
+        addTable(columnNames: $columnNames1, attributes: $attributes1, query:$query1, title:"Open Appointments",
+            size:"largeBox", openItemPage:"appointment.php");
         //
         // Get the closed appointments
         //
-        $query2 = "SELECT appointmentID, startTime, endTime, patientID, employeeID FROM appointment WHERE appointmentStatus = 'close' AND patientID = '$patientID';";
+        $query2 = "SELECT appointmentID, startTime, endTime, patientID, employeeID FROM appointment 
+                   WHERE appointmentStatus = 'close' AND patientID = '$patientID';";
         $columnNames2 = ["ID", "Start", "End", "Patient ID", "Employee ID"];
         $attributes2 = ["appointmentID", "startTime", "endTime", "patientID", "employeeID"];
-        addTable(columnNames: $columnNames2, attributes: $attributes2, query:$query2, title:"Closed Appointments", size:"largeBox", openItemPage:"appointment.php");
+        addTable(columnNames: $columnNames2, attributes: $attributes2, query:$query2, title:"Closed Appointments",
+            size:"largeBox", openItemPage:"appointment.php");
         echo '</div>';
     }
     else if($_SESSION["accountType"] == "doctor") {
@@ -166,10 +168,12 @@ if(isset($_SESSION["username"])) {
                                             AND bookedDate = '$currentDate' AND employeeID = '$doctorID'");
         if($data2) {
             $data2Fetched = mysqli_fetch_assoc($data2);
-            addCard("Today's appointments", $data2Fetched["appointmentID"], "images/icons/appointment-black.png");
+            addCard("Today's appointments", $data2Fetched["appointmentID"],
+                "images/icons/appointment-black.png");
         }
         else {
-            addCard("Today's appointments", "Unable to load data", "images/icons/appointment-black.png");
+            addCard("Today's appointments", "Unable to load data",
+                "images/icons/appointment-black.png");
         }
         echo '</div>';
         //
@@ -190,8 +194,8 @@ if(isset($_SESSION["username"])) {
                                     AND employeeID = '$doctorID'";
         $doctorOpenAppointmentsColumns = ["ID", "Start", "End", "Patient ID"];
         $doctorOpenAppointmentsAttributes = ["appointmentID", "startTime", "endTime", "patientID"];
-        addTable(columnNames: $doctorOpenAppointmentsColumns, attributes: $doctorOpenAppointmentsAttributes, query:$doctorOpenAppointments, title:"Today's Appointments",
-            size:"smallBox", openItemPage:"appointment.php");
+        addTable(columnNames: $doctorOpenAppointmentsColumns, attributes: $doctorOpenAppointmentsAttributes,
+            query:$doctorOpenAppointments, title:"Today's Appointments", size:"smallBox", openItemPage:"appointment.php");
         //
         // To get the room occupancy list
         //

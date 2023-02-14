@@ -22,7 +22,7 @@ if(isset($_SESSION["username"])) {
     else {
         $availableRoomsQuery = null;
     }
-    ?>
+?>
     <main class="app-main">
         <div class="heading">
             <h3>Book an Operating Room</h3>
@@ -86,21 +86,21 @@ if(isset($_SESSION["username"])) {
                     <button type="submit" name="availableRoomsButton">get available rooms</button>
                 </div>
             </form>
-
             <?php
                 if(isset($_POST["availableRoomsButton"])) {
-                    echo '<form action="../controllers/addORBookingHandler.php?date='.$_POST["date"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                    echo '<form action="../controllers/addORBookingHandler.php?date='.$_POST["date"].
+                        '&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].
+                        '" method="POST" autocomplete="off">';
                 }
                 else {
                     echo '<form action="../controllers/addORBookingHandler.php" method="POST" autocomplete="off">';
                 }
             ?>
-
                 <div id="mainSection">
                     <div class="formSection">
-                        <label class="inputLabel" for="patientTextBox">Patient</label>
+                        <label class="inputLabel" for="patientIDs">Patient</label>
                         <br>
-                        <select name="patientIDs" required>
+                        <select name="patientIDs" id="patientIDs" required>
                             <?php
                             $query = "SELECT
                                         patient.patientID,
@@ -121,9 +121,9 @@ if(isset($_SESSION["username"])) {
                         </select>
                     </div>
                     <div class="formSection">
-                        <label class="inputLabel" for="operatingRoomTextBox">Operating room</label>
+                        <label class="inputLabel" for="operatingRoomIDs">Operating room</label>
                         <br>
-                        <select name="operatingRoomIDs" required>
+                        <select name="operatingRoomIDs" id="operatingRoomIDs" required>
                             <?php
                                 if($availableRoomsQuery != null) {
                                     $rawData = handleSelectQuery($availableRoomsQuery);
@@ -144,7 +144,7 @@ if(isset($_SESSION["username"])) {
             </form>
         </div>
     </main>
-    <?php
+<?php
 }
 else {
     header("Location: login.php");

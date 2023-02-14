@@ -34,7 +34,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="formSection">
                         <label class="inputLabel" for="firstNameTextBox">First name</label>
                         <br>
@@ -46,7 +45,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="formSection">
                         <label class="inputLabel" for="lastNameTextBox">Middle name</label>
                         <br>
@@ -58,7 +56,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="formSection">
                         <label class="inputLabel" for="lastNameTextBox">Last name</label>
                         <br>
@@ -70,7 +67,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="formSection">
                         <label class="inputLabel" for="contactNumberTextBox">Contact number</label>
                         <br>
@@ -82,7 +78,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="radioButtonSection">
                         <label class="inputLabel">Gender</label>
                         <div>
@@ -92,22 +87,13 @@ if(isset($_SESSION["username"])) {
                             <input type="radio" value="female" id="femaleRadioBtn" name="genderOption">
                         </div>
                     </div>
-
-<!--                    <div class="formSection">-->
-<!--                        <label class="inputLabel" for="specializationTextBox">Specialization</label>-->
-<!--                        <br>-->
-<!--                        <textarea id="specializationTextBox" name="specialization" column=40 row=5 required></textarea>-->
-<!--                        <br>-->
-<!--                    </div>-->
-
                 <div class="buttonSection">
                     <button type="submit">Add</button>
                 </div>
             </form>
         </div>
     </main>
-
-    <?php
+<?php
 }
 else {
     header("Location: login.php");

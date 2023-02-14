@@ -11,6 +11,7 @@ if(isset($_SESSION["username"])) {
     $records = handleSelectQuery("SELECT * FROM operatingroomschedule 
                                             WHERE operatingRoomScheduleID = '$ORBookingID';");
     $currentTime = time();
+    $globalFetch = null;
 
     if($records) {
         $globalFetch = mysqli_fetch_assoc($records);
@@ -29,7 +30,7 @@ if(isset($_SESSION["username"])) {
     else {
         $availableRoomsQuery = null;
     }
-    ?>
+?>
     <main class="app-main">
         <div class="heading">
             <h3>Update an Operating Room Booking</h3>
@@ -42,11 +43,13 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="date" id="datePicker" name="date"
                             <?php
-                            if(isset( $globalFetch["bookedDate"])) {
-                                echo 'value="'. $globalFetch["bookedDate"].'"';
-                            }
-                            ?>
-                               required>
+                                if(isset($_POST["availableRoomsButton"])) {
+                                    echo 'value="'.$bookedDate.'"';
+                                }
+                                else if(isset($globalFetch["bookedDate"])) {
+                                    echo 'value="'. $globalFetch["bookedDate"].'"';
+                                }
+                            ?> required>
                         <br>
                         <label class="errorMessage" for="datePicker"><?php
                             if(isset($_GET["invalidDateError"])) {
@@ -59,11 +62,13 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="startTimePicker" name="startTime"
                             <?php
-                            if(isset( $globalFetch["startTime"])) {
-                                echo 'value="'. $globalFetch["startTime"].'"';
-                            }
-                            ?>
-                               required>
+                                if(isset($_POST["availableRoomsButton"])) {
+                                    echo 'value="'.$startTime.'"';
+                                }
+                                else if(isset( $globalFetch["startTime"])) {
+                                    echo 'value="'. $globalFetch["startTime"].'"';
+                                }
+                            ?> required>
                         <br>
                         <label class="errorMessage" for="startTimePicker"><?php
                             if(isset($_GET["invalidStartTimeError"])) {
@@ -76,11 +81,13 @@ if(isset($_SESSION["username"])) {
                         <br>
                         <input type="time" id="endTimePicker" name="endTime"
                             <?php
-                            if(isset( $globalFetch["endTime"])) {
-                                echo 'value="'. $globalFetch["endTime"].'"';
-                            }
-                            ?>
-                               required>
+                                if(isset($_POST["availableRoomsButton"])) {
+                                    echo 'value="'.$endTime.'"';
+                                }
+                                else if(isset( $globalFetch["endTime"])) {
+                                    echo 'value="'. $globalFetch["endTime"].'"';
+                                }
+                            ?> required>
                         <br>
                         <label class="errorMessage" for="endTimePicker"><?php
                             if(isset($_GET["invalidDurationError"])) {
@@ -96,10 +103,13 @@ if(isset($_SESSION["username"])) {
 
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.'date='.$_POST["date"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.'&date='.$_POST["date"].
+                    '&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].
+                    '" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/updateORBookingHandler.php?ID='.$ORBookingID.
+                    '" method="POST" autocomplete="off">';
             }
             ?>
 
@@ -158,7 +168,7 @@ if(isset($_SESSION["username"])) {
             </form>
         </div>
     </main>
-    <?php
+<?php
 }
 else {
     header("Location: login.php");

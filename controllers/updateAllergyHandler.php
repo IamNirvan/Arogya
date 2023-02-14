@@ -35,7 +35,7 @@ if(isset($_SESSION["username"])) {
         $records = handleSelectQuery($selectQuery);
 
         if(!$records) {
-            $updateQuery = "UPDATE alleries SET name = '$allergyName' WHERE allergyID = '$allergyID';";
+            $updateQuery = "UPDATE allergies SET name = '$allergyName' WHERE allergyID = '$allergyID';";
             if(!handleUpdateQuery($updateQuery)) {
                 header("location: ../views/updateAllergy.php?ID=$allergyID&allergyNameError=Allergy already exists");
                 die();

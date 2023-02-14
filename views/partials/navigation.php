@@ -53,6 +53,16 @@
                             Manage account
                         </a>
                         </li>
+                        <li class="navigation-ul-li">
+                            <a ';
+                            if($path == "invoices.php") {echo "class=navigation-ul-li-a-active" ; }
+                            else {echo "class=navigation-ul-li-a-inactive";};
+                            echo'
+                            href="invoices.php">
+                            <img src="images/icons/invoice.png">
+                            Invoices
+                        </a>
+                        </li>
                     </ul>
                 </nav> ';
                 }

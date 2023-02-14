@@ -6,6 +6,8 @@ require('partials/navigation.php');
 if(isset($_SESSION["username"])) {
     $allergyID = $_GET["ID"];
     $records = handleSelectQuery("SELECT * FROM allergies WHERE allergyID = '$allergyID';");
+    $globalFetch = null;
+
     if($records) {
         $globalFetch = mysqli_fetch_assoc($records);
     }
@@ -15,12 +17,16 @@ if(isset($_SESSION["username"])) {
             <h3>Update Allergy</h3>
         </div>
         <div class="container">
-            <form action="../controllers/updateAllergyHandler.php?ID=<?php echo $allergyID; ?>&allergyName=<?php echo $globalFetch["name"]?>" method="POST" autocomplete="off">
+            <form action="../controllers/updateAllergyHandler.php?ID=<?php echo $allergyID; ?>&allergyName=<?php
+                echo $globalFetch["name"]
+            ?>" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">
                         <label class="inputLabel" for="allergyTextBox">Allergy</label>
                         <br>
-                        <input type="text" id="allergyTextBox" name="allergyName" value="<?php echo $globalFetch["name"]?>" required>
+                        <input type="text" id="allergyTextBox" name="allergyName" value="<?php
+                            echo $globalFetch["name"]
+                        ?>" required>
                         <br>
                         <label class="errorMessage" for="allergyTextBox"><?php
                             if(isset($_GET["allergyNameError"])) {

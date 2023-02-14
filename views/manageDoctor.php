@@ -1,6 +1,5 @@
 <?php
 $pageTitle = "Manage doctors";
-
 require('partials/header.php');
 require('partials/navigation.php');
 require('../utility/table.php');
@@ -8,8 +7,6 @@ require('../utility/searchPanel.php');
 require('../utility/informationPanel.php');
 
 if(isset($_SESSION["username"])) {
-    $currentdate = date('Y-m-d');
-
     if(isset($_GET["error"])) {
         echo '<script>alert("'.$_GET["error"].'")</script>';
     }
@@ -108,4 +105,4 @@ if(isset($_SESSION["username"])) {
 else {
     header("Location: login.php");
 }
-?><?php
+?>

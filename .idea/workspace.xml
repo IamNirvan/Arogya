@@ -4,29 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162267e0-d47f-4a7e-9152-b0e446075573" name="Changes" comment="Added patient account management files">
-      <change afterPath="$PROJECT_DIR$/controllers/InvoiceGenerationHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/addUsedResourceHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/closeAppointmentHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/deleteUsedResourceHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/updateUsedResourceHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/addUsedResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/deleteUsedResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/manageAppointment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/updateUsedResource.php" afterDir="false" />
+    <list default="true" id="162267e0-d47f-4a7e-9152-b0e446075573" name="Changes" comment="Modified appointment.php">
+      <change afterPath="$PROJECT_DIR$/views/css/invoiceStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/invoice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/invoices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/updatePatientHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updatePatientHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/arogyahms database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/addDoctorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/addDoctorHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/deleteDoctorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/deleteDoctorHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/updateAllergyHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updateAllergyHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/updateDoctorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updateDoctorHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/updatePatientRoomOccupancyHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/updatePatientRoomOccupancyHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utility/stylesheetMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/utility/stylesheetMapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/table.php" beforeDir="false" afterPath="$PROJECT_DIR$/utility/table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/validationHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/utility/validationHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/ORSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/ORSchedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/PatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/PatientRoomOccupancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/UpdatePatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/UpdatePatientRoomOccupancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addAllergy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addAllergy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addExamination.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addExamination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addImmunizations.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addImmunizations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addORBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addORBooking.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/addPatientRoomOccupancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addPatientRoomOccupancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addReceptionist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addSurgery.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addSurgery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/css/ORBookingManagementStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/ORBookingManagementStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/css/tableStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/tableStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deleteAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/deleteAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deletePatientAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/deletePatientAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deleteReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/deleteReceptionist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/manageAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/manageAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/manageDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/manageDoctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/manageReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/manageReceptionist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/medicalHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/medicalHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/patientRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/patientRegistration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/patients.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/patients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateAllergy.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateAllergy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateDoctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateExamination.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateExamination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateImmunization.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateImmunization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateORBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateORBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateReceptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateReceptionist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/updateSurgery.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/updateSurgery.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +61,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -56,9 +78,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
     "last_opened_file_path": "C:/xampp/htdocs/1_HND/HMS version 3/views",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -72,8 +96,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\1_HND\HMS version 3\views" />
-      <recent name="C:\xampp\htdocs\1_HND\HMS version 3\controllers" />
       <recent name="C:\xampp\htdocs\1_HND\HMS version 3\views\css" />
+      <recent name="C:\xampp\htdocs\1_HND\HMS version 3\controllers" />
       <recent name="C:\xampp\htdocs\1_HND\HMS version 3\utility" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -102,7 +126,13 @@
       <workItem from="1675838584158" duration="12758000" />
       <workItem from="1675877130629" duration="11205000" />
       <workItem from="1675937455443" duration="8263000" />
-      <workItem from="1675953336607" duration="10019000" />
+      <workItem from="1675953336607" duration="10546000" />
+      <workItem from="1676002691215" duration="30182000" />
+      <workItem from="1676131791350" duration="336000" />
+      <workItem from="1676213330929" duration="16000" />
+      <workItem from="1676228113228" duration="802000" />
+      <workItem from="1676277437531" duration="2562000" />
+      <workItem from="1676370278860" duration="6922000" />
     </task>
     <task id="LOCAL-00001" summary="Added patient room occupancy resources">
       <created>1675605894727</created>
@@ -230,7 +260,42 @@
       <option name="project" value="LOCAL" />
       <updated>1675949403847</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added appointment management related files">
+      <created>1675975353573</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1675975353573</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Revised stylesheets">
+      <created>1675975376709</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1675975376709</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Mass commit">
+      <created>1675975426796</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1675975426796</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed query for card">
+      <created>1676004507343</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1676004507343</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Modified appointment.php">
+      <created>1676004546813</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1676004546813</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +318,6 @@
     <MESSAGE value="Modified OR booking resources" />
     <MESSAGE value="Added patient room occupancy handler resources" />
     <MESSAGE value="Layout changes to add, update and delete pages" />
-    <MESSAGE value="Mass commit" />
     <MESSAGE value="Added new export of the database" />
     <MESSAGE value="Stylesheet changes" />
     <MESSAGE value="PHP project file modifications" />
@@ -264,6 +328,11 @@
     <MESSAGE value="Added image to search panel button" />
     <MESSAGE value="Enhanced appearance" />
     <MESSAGE value="Added patient account management files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added patient account management files" />
+    <MESSAGE value="Added appointment management related files" />
+    <MESSAGE value="Revised stylesheets" />
+    <MESSAGE value="Mass commit" />
+    <MESSAGE value="Fixed query for card" />
+    <MESSAGE value="Modified appointment.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified appointment.php" />
   </component>
 </project>

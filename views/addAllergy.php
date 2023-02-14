@@ -10,7 +10,6 @@ if(isset($_SESSION["username"])) {
             <h3>Add Allergy</h3>
         </div>
         <div class="container">
-
             <form action="../controllers/addAllergyHandler.php" method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">

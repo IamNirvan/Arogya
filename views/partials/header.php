@@ -3,7 +3,6 @@ Author: Shalin Kulawardane
 This page contains the header and the navigation
 -->
 <?php
-$pageTitle = "HMS";
 session_start();
 require('../utility/stylesheetMapper.php');
 require("../utility/queryHandler.php");

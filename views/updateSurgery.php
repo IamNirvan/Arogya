@@ -7,6 +7,8 @@ if(isset($_SESSION["username"])) {
     $patientID = $_SESSION["ID"];
     $surgeryID = $_GET["ID"];
     $records = handleSelectQuery("SELECT * FROM surgeries WHERE surgeryID = '$surgeryID';");
+    $globalFetch = null;
+
     if($records) {
         $globalFetch = mysqli_fetch_assoc($records);
     }
@@ -16,12 +18,15 @@ if(isset($_SESSION["username"])) {
             <h3>Update Surgery</h3>
         </div>
         <div class="container">
-            <form action="../controllers/updateSurgeryHandler.php?ID=<?php echo $surgeryID;?>" method="POST" autocomplete="off">
+            <form action="../controllers/updateSurgeryHandler.php?ID=<?php echo $surgeryID;?>"
+                  method="POST" autocomplete="off">
                 <div id="mainSection">
                     <div class="formSection">
                         <label class="inputLabel" for="surgeryNameTextBox">Name</label>
                         <br>
-                        <input type="text" id="surgeryNameTextBox" name="surgeryName" value="<?php echo $globalFetch['name']?>" required>
+                        <input type="text" id="surgeryNameTextBox" name="surgeryName" value="<?php
+                            echo $globalFetch['name']
+                        ?>" required>
                         <br>
                         <label class="errorMessage" for="surgeryNameTextBox"><?php
                             if(isset($_GET["surgeryNameError"])) {
@@ -32,7 +37,9 @@ if(isset($_SESSION["username"])) {
                     <div class="formSection">
                         <label class="inputLabel" for="surgeryOutcomeTextBox">Outcome</label>
                         <br>
-                        <input type="text" id="surgeryOutcomeTextBox" name="surgeryOutcome" value="<?php echo $globalFetch["outcome"]?>" required>
+                        <input type="text" id="surgeryOutcomeTextBox" name="surgeryOutcome" value="<?php
+                            echo $globalFetch["outcome"]
+                        ?>" required>
                         <br>
                         <label class="errorMessage" for="surgeryOutcomeTextBox"><?php
                             if(isset($_GET["surgeryOutcomeError"])) {
@@ -46,12 +53,6 @@ if(isset($_SESSION["username"])) {
                         <select id="appointmentSelect" name="appointmentIDs" required>
                             <?php
                             $examAppointmentID = $globalFetch["appointmentID"];
-                            //
-                            // the query makes sure that examinations that have an
-                            // appointment ID are for surgeries, immunizations and
-                            // other examinations are not shown except for the
-                            // appointment ID of the examination being updated
-                            //
                             $query = "SELECT 
                                         appointment.appointmentID, 
                                         appointment.bookedDate 

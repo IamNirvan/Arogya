@@ -46,7 +46,6 @@ if(isset($_SESSION["username"])) {
                             }
                             ?></label>
                     </div>
-
                     <div class="formSection">
                         <label class="inputLabel" for="usernameTextBox">Doctor ID</label>
                         <br>
@@ -61,12 +60,12 @@ if(isset($_SESSION["username"])) {
                                 $firstName = $fetched["firstName"];
                                 $lastName = $fetched["lastName"];
                                 $specialization = $fetched["specialization"];
-                                echo "<option value=$employeeID>$employeeID-$firstName  $lastName-$specialization</option>";
+                                echo "<option value=$employeeID>$employeeID-$firstName  
+                                        $lastName-$specialization</option>";
                             }
                             ?>
                         </select>
                     </div>
-
                     <?php if($_SESSION["accountType"] == "receptionist") {
                         ?>
                         <div class="formSection">
@@ -91,10 +90,9 @@ if(isset($_SESSION["username"])) {
                                 ?>
                             </select>
                         </div>
-
                     <?php
-                    }?>
-
+                    }
+                    ?>
                     <div class="formSection">
                         <label class="inputLabel" for="addressTextBox">Reason</label>
                         <br>
@@ -108,8 +106,7 @@ if(isset($_SESSION["username"])) {
             </form>
         </div>
     </main>
-
-    <?php
+<?php
 }
 else {
     header("Location: login.php");

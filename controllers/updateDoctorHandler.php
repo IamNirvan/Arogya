@@ -19,7 +19,8 @@ if(isset($_SESSION["username"])) {
     //
     // Validate
     //
-    if(!validateUsername($username, "SELECT username from employeeaccount WHERE lower(username) = lower('$username') AND employeeID != $doctorID")) {
+    if(!validateUsername($username, "SELECT username from employeeaccount WHERE 
+                                         lower(username) = lower('$username') AND employeeID != $doctorID")) {
         header("Location: ../views/updateDoctor.php?ID=$doctorID&usernameError=Username is taken");
         die();
     }
@@ -39,7 +40,8 @@ if(isset($_SESSION["username"])) {
         die();
     }
 
-    if(!validateContactNumber($contactNumber, "SELECT contactNumber from employee WHERE contactNumber = '$contactNumber' AND employeeID != $doctorID")) {
+    if(!validateContactNumber($contactNumber, "SELECT contactNumber from employee WHERE 
+                                       contactNumber = '$contactNumber' AND employeeID != $doctorID")) {
         header("Location: ../views/updateDoctor.php?ID=$doctorID&contactNumberError=Invalid contact number");
         die();
     }
@@ -72,7 +74,8 @@ if(isset($_SESSION["username"])) {
         }
 
         if(!handleUpdateQuery($updateEmployeeAccountQuery)) {
-            header("Location: ../views/manageDoctor.php?error=An error occurred when updating doctor account details");
+            header("Location: ../views/manageDoctor.php?error=An error occurred when updating doctor 
+                account details");
             die();
         }
         header("Location: ../views/manageDoctor.php");

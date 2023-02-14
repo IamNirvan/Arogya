@@ -11,6 +11,7 @@ if(isset($_SESSION["username"])) {
     $doctorID = $_SESSION["ID"];
     $currentDate = date("Y-m-d");
     $currentTime = time();
+    $availableRoomsQuery = null;
 
     if(isset($_POST["availableRoomsButton"])) {
         $startDate = $_POST["startDate"];
@@ -26,24 +27,9 @@ if(isset($_SESSION["username"])) {
                                 (roomoccupancy.endDate <= '$endDate')) AND roomID NOT IN 
                                 (SELECT roomID FROM roomoccupancy WHERE (roomoccupancy.startTime >= '$startTime') AND 
                                 (roomoccupancy.endTime <= '$endTime')))";
-
-//        Old query
-//        $availableRoomsQuery = "SELECT
-//                                    roomID,
-//                                    roomNumber
-//                                    FROM room
-//                                    WHERE roomID NOT IN
-//                                    (SELECT
-//                                    roomID
-//                                    FROM roomoccupancy
-//                                    WHERE (startDate >= '$startDate' OR (endDate >= '$startDate' AND endDate <= '$endDate')))
-//                                    AND roomTypeID = '$roomType';";
-    }
-    else {
-        $availableRoomsQuery = null;
     }
 
-    ?>
+?>
     <main class="app-main">
         <div class="heading">
             <h3>Book a Room</h3>
@@ -151,16 +137,17 @@ if(isset($_SESSION["username"])) {
                     <button type="submit" name="availableRoomsButton">get available rooms</button>
                 </div>
             </form>
-
             <?php
             if(isset($_POST["availableRoomsButton"])) {
-                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php?startDate='.$_POST["startDate"].'&endDate='.$_POST["endDate"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].'" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php?startDate='.$_POST["startDate"].
+                    '&endDate='.$_POST["endDate"].'&startTime='.$_POST["startTime"].'&endTime='.$_POST["endTime"].
+                    '" method="POST" autocomplete="off">';
             }
             else {
-                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php" method="POST" autocomplete="off">';
+                echo '<form action="../controllers/addPatientRoomOccupancyHandler.php" method="POST" 
+                      autocomplete="off">';
             }
             ?>
-
             <div id="mainSection">
                 <div class="formSection">
                     <label class="inputLabel" for="patientTextBox">Patient</label>

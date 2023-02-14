@@ -1,6 +1,5 @@
 <?php
 $pageTitle = "Manage doctors";
-
 require('partials/header.php');
 require('partials/navigation.php');
 require('../utility/table.php');
@@ -31,7 +30,6 @@ if(isset($_SESSION["username"])) {
             <button type="submit">Delete</button>
         </form>
     </div>
-        <!-- This container is for the form -->
         <div class="container">
             <form action="../controllers/updatePatientHandler.php" method="POST" autocomplete="off">
                 <div id="mainSection">
@@ -117,7 +115,8 @@ if(isset($_SESSION["username"])) {
                             <?php
                                 if(isset($globalFetchPatient["gender"])) {
                                     if ($globalFetchPatient["gender"] == "male") {
-                                        echo '<input type="radio" value="male" id="maleRadioBtn" name="genderOption" checked required>';
+                                        echo '<input type="radio" value="male" id="maleRadioBtn" name="genderOption" 
+                                                checked required>';
                                     }
                                     else {
                                         echo '<input type="radio" value="male" id="maleRadioBtn" name="genderOption">';
@@ -128,10 +127,12 @@ if(isset($_SESSION["username"])) {
                             <?php
                                 if(isset($globalFetchPatient["gender"])) {
                                     if($globalFetchPatient["gender"] == "female") {
-                                        echo '<input type="radio" value="female" id="femaleRadioBtn" name="genderOption" checked required>';
+                                        echo '<input type="radio" value="female" id="femaleRadioBtn" 
+                                               name="genderOption" checked required>';
                                     }
                                     else {
-                                        echo '<input type="radio" value="female" id="femaleRadioBtn" name="genderOption">';
+                                        echo '<input type="radio" value="female" id="femaleRadioBtn" 
+                                                name="genderOption">';
                                     }
                                 }
                             ?>
@@ -187,11 +188,10 @@ if(isset($_SESSION["username"])) {
                     <div class="formSection">
                         <label class="inputLabel" for="addressTextBox">Address</label>
                         <br>
-                        <textarea id="addressTextBox" name="address" column=40 row=5 required><?php
+                        <textarea id="addressTextBox" name="address" required><?php
                             if(isset($globalFetchPatient["address"])) {
                                 echo $globalFetchPatient["address"];
-                            }
-                            ?></textarea>
+                            }                            ?></textarea>
                         <br>
                         <label class="errorMessage" for="addressTextBox"><?php
                             if(isset($_GET["addressError"])) {
@@ -211,4 +211,4 @@ if(isset($_SESSION["username"])) {
 else {
     header("Location: login.php");
 }
-?><?php
+?>

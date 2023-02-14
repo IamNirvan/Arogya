@@ -22,7 +22,7 @@ $data = [
     "deleteReceptionist.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addDoctor.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "updateDoctor.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
-    "deleteDoctor.php" => "<link rel=\"stylesheet\" href=\"css/dataManagementStyle.css\">\n",
+    "deleteDoctor.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addAllergy.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "updateAllergy.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "deleteAllergy.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
@@ -36,7 +36,9 @@ $data = [
     "updateSurgery.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
     "deleteSurgery.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
     "addUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
-    "updateUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n"
+    "updateUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/ORBookingManagementStyle.css\">\n",
+    "deleteUsedResource.php" => "<link rel=\"stylesheet\" href=\"css/deleteRecordStyle.css\">\n",
+    "invoice.php" => "<link rel=\"stylesheet\" href=\"css/invoiceStyle.css\">\n"
 ];
 
 
